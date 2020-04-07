@@ -4,4 +4,4 @@
 001
 <a href="001 Insertion sort" >Insertion sord</a><br>
 002
-<a href="002 Selection sort" >001 Selection sord</a><br>
+<a href="002 Selection sort" >Selection sord</a><br>
