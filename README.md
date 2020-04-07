@@ -2,7 +2,7 @@
 
 #### Fondamenti
 001
-<a href="001 Insertion sort" >Insertion sord</a><br>
+<a href="001 Insertion sort" >Insertion sort</a><br>
 ```c++
 for (int j=2; j<N; j++){
   int k = a[j];
@@ -15,7 +15,7 @@ for (int j=2; j<N; j++){
 }
 ```
 002
-<a href="002 Selection sort" >Selection sord</a><br>
+<a href="002 Selection sort" >Selection sort</a><br>
 ```c++
 for (int j=0; j<N; j++){
   int k=a[j], p=j, s;
