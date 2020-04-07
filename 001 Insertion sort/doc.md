@@ -53,5 +53,5 @@ T(n) =
   c<sub>6</sub>Σ([j=2 to n] t<sub>j</sub>-1)
     +
   c<sub>7</sub>(n-1)
-  
+
   Ovvero la somma di tutti costi delle varie righe moltiplicati per tutte le volte che ogni riga viene eseguita
