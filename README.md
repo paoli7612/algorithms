@@ -4,14 +4,14 @@
 001
 <a href="001 Insertion sort" >Insertion sort</a><br>
 ```c++
-for (int j=2; j<N; j++){
+for (int j=1; j<N; j++){
   int k = a[j];
   int i = j-1;
-  while (i>0 && a[i]>k){
+  while (i>=0 && a[i]>k){
     a[i+1] = a[i];
     i--;
   }
-  a[i+1] = k;		
+  a[i+1] = k;
 }
 ```
 002

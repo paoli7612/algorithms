@@ -28,7 +28,7 @@ void print_array(int a[N]){
 }
 
 int main(){
-	int array[N] = {0,9,5,4,7,6,3,8,2,1};
+	int array[N] = {1,9,5,4,7,6,3,8,2,0};
 	print_array(array);									//disordinato
 	int* p = insertion_sort(array);			//riordino
 	print_array(p);											//ordinato
