@@ -1,14 +1,14 @@
 
 ## Insertion sort
 ```c++
-for (int j=2; j<N; j++){
+for (int j=1; j<N; j++){
   int k = a[j];
   int i = j-1;
-  while (i>0 && a[i]>k){
+  while (i>=0 && a[i]>k){
     a[i+1] = a[i];
     i--;
   }
-  a[i+1] = k;		
+  a[i+1] = k;
 }
 ```)
 
@@ -22,10 +22,10 @@ Indichiamo con t<sub>j</sub> il numero di volte che il ciclo **while** (della ri
 Teniamo inoltre conto che quando un **while** o un **for** terminano in modo "consueto" (ovvero come stabilito dal test all'inizio del ciclo), il test viene eseguito una volta in più del corpo del ciclo (quindi fino a che j<N (riga 1) non risulta falso continuo il corpo del **for** ma controllerò se j<N una volta in più delle volte che eseguo il suo interno perche mi darà **false** e quindi non eseguirò il corpo)
 
 ```c++
-for (int j=2; j<N; j++){    // N
+for (int j=1; j<N; j++){    // N
   int k = a[j];             // N-1
   int i = j-1;              // N-1
-  while (i>0 && a[i]>k){    // Σ j=2 to N (tj)
+  while (i>=0 && a[i]>k){    // Σ j=2 to N (tj)
     a[i+1] = a[i];          // Σ j=2 to N (tj-1)
     i--;                    // Σ j=2 to N (tj-1)
   }                         // 0
