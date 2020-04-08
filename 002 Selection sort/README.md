@@ -1,5 +1,5 @@
 
-## Insertion sort
+## Merge sort
 
 **Esercizio 2.2-2**
 
