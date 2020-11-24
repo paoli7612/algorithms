@@ -1,13 +1,15 @@
-#include <stdio.h>
+#include <iostream>
+#include <time.h>
+#include <stdlib.h>
+
+using namespace std;
 
 // insertion sort
 
 //ordinamento di array di N caratteri
 
-#define N 10
-
-int* insertion_sort(int a[N]){
-	for (int j=1; j<N; j++){
+int* insertion_sort(int *a, int n){
+	for (int j=1; j<n; j++){
 		int k = a[j];
 		int i = j-1;
 		while (i>=0 && a[i]>k){
@@ -20,16 +22,32 @@ int* insertion_sort(int a[N]){
 	return a;
 }
 
-void print_array(int a[N]){
-	for (int i=0; i<N; i++){
-		printf(" %d ", a[i]);
+void print_array(int *a, int n){
+	for (int i=0; i<n; i++){
+		cout << " " << a[i] << " ";
 	}
-	printf("\n");
+	cout << endl;
 }
 
-int main(){
-	int array[N] = {1,9,5,4,7,6,3,8,2,0};
-	print_array(array);									//disordinato
-	int* p = insertion_sort(array);			//riordino
-	print_array(p);											//ordinato
+int main(int argc, char** argv){
+	srand(time(NULL));
+	int n, scelta;
+	int *array;
+
+	cout << "1) array casuale\n2) inserisci manualmente" << endl;
+	cin >> scelta;
+	cout << "Inserisci il numero di elementi che deve contenere l'array: ";
+	cin >> n;
+	array = new int[n];
+	for (int i=0; i<n; i++){
+		if(scelta == 1){
+			array[i] = rand()%20+1;
+		}	else if (scelta == 2){
+			cout << "elemento " << i+1 << ": ";
+			cin >> array[i];
+		}
+	}
+	print_array(array, n);									//disordinato
+	int* p = insertion_sort(array, n);			//riordino
+	print_array(p, n);											//ordinato
 }
