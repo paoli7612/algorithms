@@ -2,23 +2,27 @@
 
 using namespace std;
 
+const int MAX = 256;
+
 int main(int argc, char** argv){
-	int n;
-	
-	cout << "Inserisci il numero sequenza caratteri da comprimere: ";
-	cin >> n;
-	
-	char* message = new char[n];
+	char* message = new char[256];
+	cout << "inserisci la parola da comprimere (usa _ per separare più sottoparole (max 256 caratteri)" << endl;
 	cin >> message;
+	int n = 256;
+	//cout << "Inserisci il numero sequenza caratteri da comprimere: ";
+	//cin >> n;
 	
+	//char* message = new char[n];
+	//cin >> message;
+		
 	char caratteri[n];
 	int ripetizioni[n];
 	int num_caratteri = 0; 
 	
+	cout << "Analizza \"" << message << "\"" << endl;
 	
 	for (int i=0; i<n; i++){
 		char c = message[i];
-		cout << c;
 		int p;
 		for (p=0; p<num_caratteri; p++)
 			if (caratteri[p] == c) break;
@@ -29,10 +33,6 @@ int main(int argc, char** argv){
 		} else {
 			ripetizioni[p]++;
 		}
-		// se è gia stato salvato
-			// incrementa il numero di ripetizioni
-		// altrimenti
-			// salvalo con ripetizioni = 0
 	}
 	cout << endl;
 	for (int i=0; i<num_caratteri; i++){
