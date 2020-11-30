@@ -31,6 +31,23 @@ int pos(char* cc, char c, int max){
 	return p;
 }
 
+void sort(Data &d){
+	for (int a=1; a<d.nc; a++){
+		
+		int c = d.caratteri[a];
+		int i = d.ripetizioni[a];
+		int b = a-1;
+		
+		while (b>=0 && d.ripetizioni[b]>i){
+			d.caratteri[b+1] = d.caratteri[b];
+			d.ripetizioni[b+1] = d.ripetizioni[b];
+			b--;
+		}
+		d.caratteri[b+1] = c;
+		d.ripetizioni[b+1] = i;
+	}
+}
+
 void step1(Data &d){
 	for (int i=0; i<d.N; i++){
 		char c = d.message[i];
@@ -67,8 +84,8 @@ int main(int argc, char** argv){
 	Data d;
 	init(d);
 	step1(d);
+	sort(d);
 	stampa(d);
-		
 		
 	return 0;
 }
