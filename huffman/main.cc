@@ -1,50 +1,41 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 const int MAX = 256;
 
 int main(int argc, char** argv){
-	char* message = new char[256];
+	string message;
 	cout << "inserisci la parola da comprimere (usa _ per separare più sottoparole (max 256 caratteri)" << endl;
 	cin >> message;
-	int n = 256;
+	int n = message.length();
 			
 	char caratteri[n];
 	int ripetizioni[n];
 	int num_caratteri = 0; 
 	
-	cout << "Analizza \"" << message << "\"" << endl;
+	cout << "Compressione di \"" << message << "\"" << endl;
 	
-	for (int i=0; i<n; i++){
+	for (int i=0; i<message.size(); i++){
 		char c = message[i];
-		if (c == ' ') break;
+		cout << c << endl;
 		int p;
+		
 		for (p=0; p<num_caratteri; p++)
-			if (caratteri[p] == c)
-				break;
-		if (p == num_caratteri){
+			if (caratteri[p] == c) break;
+			
+		if (num_caratteri == p){
 			caratteri[p] = c;
-			ripetizioni[p] = 1;
 			num_caratteri++;
-		} else {
-			ripetizioni[p]++;
+			ripetizioni[p] = 0;
 		}
-	}
-	cout << endl << "num_caratteri: " << num_caratteri << endl;
-
-	
-	// ordiniamo i vettori di "caratteri" e "ripetizioni" in base al numero di volte che il carattere si ripete
-	int tot = num_caratteri-1;
-	char cc[tot];
-	int rr[tot];
-	for (int i=0; i<tot; i++){
-		cc[i] = caratteri[i];
-		rr[i] = ripetizioni[i];
+		
+		ripetizioni[p]++;
 	}
 	
-	for (int i=0; i<tot; i++){
-		cout << "(" << cc[i] << " x " << rr[i] << ")" << endl;
+	for (int i=0; i<num_caratteri; i++){
+		cout << "(" << caratteri[i] << " x " << ripetizioni[i] << ")" << endl;
 	}
 	
 		
