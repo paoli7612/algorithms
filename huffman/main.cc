@@ -5,39 +5,70 @@ using namespace std;
 
 const int MAX = 256;
 
-int main(int argc, char** argv){
+struct Data {
 	string message;
-	cout << "inserisci la parola da comprimere (usa _ per separare più sottoparole (max 256 caratteri)" << endl;
-	cin >> message;
-	int n = message.length();
-			
-	char caratteri[n];
-	int ripetizioni[n];
-	int num_caratteri = 0; 
-	
-	cout << "Compressione di \"" << message << "\"" << endl;
-	
-	for (int i=0; i<message.size(); i++){
-		char c = message[i];
-		cout << c << endl;
-		int p;
+	int N;
+	char* caratteri; // caratteri diversi
+	int* ripetizioni; // numeri ripetizione degll'ennesimo carattere
+	int nc; // numero caratteri diversi
+};
+
+void init(Data &d){
+	cout << "Inserisci i caratteri da comprimere (no spazi)" << endl;
+	cin >> d.message;
+	d.N = d.message.size();
+	cout << "Compressione di \"" << d.message << "\"" << endl;
+	d.nc = 0;
+	d.caratteri = new char[d.N];
+	d.ripetizioni = new int[d.N];
+}
+
+// ritorna la posizione di c in cc, se non c'è ritorna il max
+int pos(char* cc, char c, int max){
+	int p;
+	for (p=0; p<max; p++)
+		if (cc[p] == c) break;
+	return p;
+}
+
+void step1(Data &d){
+	for (int i=0; i<d.N; i++){
+		char c = d.message[i];
+		int p = pos(d.caratteri, c, d.nc);
 		
-		for (p=0; p<num_caratteri; p++)
-			if (caratteri[p] == c) break;
+		if (p == d.nc){ // trovato nuovo carattere
+			d.caratteri[p] = c;
+			d.ripetizioni[p] = 1;
+			d.nc++;
+		} else {
+			d.ripetizioni[p]++;
+		}
+		
 			
-		if (num_caratteri == p){
+		/*if (num_caratteri == p){
 			caratteri[p] = c;
 			num_caratteri++;
 			ripetizioni[p] = 0;
-		}
+		}*/
 		
-		ripetizioni[p]++;
 	}
-	
-	for (int i=0; i<num_caratteri; i++){
-		cout << "(" << caratteri[i] << " x " << ripetizioni[i] << ")" << endl;
+}
+
+void stampa(Data d){
+	for (int i=0; i<d.nc; i++){
+		if (d.caratteri[i] != ' '){
+			cout << d.caratteri[i] << " x " << d.ripetizioni[i] << endl;
+		}
 	}
+}
+
+int main(int argc, char** argv){
 	
+	Data d;
+	init(d);
+	step1(d);
+	stampa(d);
+		
 		
 	return 0;
 }
