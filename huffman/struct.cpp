@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -8,6 +9,12 @@ struct Node {
 	char name;
 	int freq;
 };
+
+struct Data {
+	char* c;
+	int* f;
+	int N;
+} data;
 
 void stampa(Node* head, int n=0){
 	cout << endl;
@@ -21,16 +28,12 @@ void stampa(Node* head, int n=0){
 }
 
 int main(int argc, char** argv){
-	
+
+	string message = "Caone come va?";
+	cout << message << endl;
+
 	Node* head = new Node;
-	head->name = 'f';
-	head->freq = 25;
-	head->left = new Node;
-	head->left->name = 'g';
-	head->left->freq = 20;
-	
+
 	stampa(head);
-	
-	
 	return 0;
 }
