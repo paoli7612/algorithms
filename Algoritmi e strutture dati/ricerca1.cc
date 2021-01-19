@@ -31,7 +31,7 @@ int main(int argc, char** argv){
 	
 	int array[] = {1, 4, 6, 7, 8, 8, 9, 12, 41, 66, 99, T};
 	
-	int key = 9;
+	int key = 3;
 	
 	cout << index1(array, key) << endl;
 	
