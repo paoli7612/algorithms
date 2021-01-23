@@ -39,7 +39,7 @@ void lista_aggiungi_prima_di(lista_t &lista, int value, nodo_t* nodo)
         lista = nuovo;
     }
     else
-        lista_aggiungi_dopo(lista->next, value, nodo);
+        lista_aggiungi_prima_di(lista->next, value, nodo);
 }
 
 void lista_stampa(lista_t &lista)
