@@ -2,9 +2,9 @@
 #include <iostream>
 #include <cstring>
 
-#include "lista.hpp"
 
 using namespace std;
+#include "lista.hpp"
 
 int main(int argc, char** argv)
 {

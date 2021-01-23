@@ -1,7 +1,3 @@
-#include <iostream>
-
-using namespace std;
-
 struct nodo_t {
     int value;
     nodo_t *next;
