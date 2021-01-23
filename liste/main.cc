@@ -1,5 +1,6 @@
 // g++ main.cc -o main.out -Wall --pedantic; ./main.out
 #include <iostream>
+#include <cstring>
 
 #include "lista.hpp"
 
@@ -9,26 +10,14 @@ int main(int argc, char** argv)
 {
     lista_t lista = NULL;
 
-    lista_aggiungi_coda(lista, 5);
-    lista_aggiungi_coda(lista, -2);
+    const char numeri[] = "2634872349023423";
 
-    for (int i=0; i<10; i++)
-        lista_aggiungi_coda(lista, 4*i);
+    for (size_t i=0; i<strlen(numeri); i++)
+        if (numeri[i] > '4')
+            lista_aggiungi_coda(lista, numeri[i]-'0');
+        else
+            lista_aggiungi_testa(lista, numeri[i]-'0');
 
-    lista_aggiungi_coda(lista, 5);
-    lista_aggiungi_coda(lista, 7);
-
-    lista_aggiungi_testa(lista, 1);
-    lista_aggiungi_testa(lista, 1);
-
-    lista_togli(lista, lista->next);
-    lista_stampa(lista);
-    lista_togli(lista, lista->next->next);
-    lista_stampa(lista);
-    lista_togli(lista, lista);
-    lista_stampa(lista);
-
-    lista_aggiungi_prima_di(lista, 99, lista->next->next->next);
     lista_stampa(lista);
 
     return 0;

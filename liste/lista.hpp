@@ -9,6 +9,7 @@ struct nodo_t {
 
 typedef nodo_t* lista_t;
 
+// ___ AGGIUNGI ___
 void lista_aggiungi_coda(lista_t &lista, int value)
 {
     if (lista == NULL)
@@ -42,6 +43,24 @@ void lista_aggiungi_prima_di(lista_t &lista, int value, nodo_t* nodo)
         lista_aggiungi_prima_di(lista->next, value, nodo);
 }
 
+void lista_aggiungi_in_posizione(lista_t &lista, int value, int index)
+{
+
+}
+
+// __ TOGLI ___
+void lista_togli_nodo(lista_t &lista, nodo_t *nodo){
+    if (lista != nodo)
+        lista_togli_nodo(lista->next, nodo);
+    else
+        lista = lista->next;
+}
+
+void lista_sort(lista_t lista)
+{
+
+}
+
 void lista_stampa(lista_t &lista)
 {
     if (lista == NULL)
@@ -52,17 +71,4 @@ void lista_stampa(lista_t &lista)
         
     cout << lista->value << " ";
     lista_stampa(lista->next);
-}
-
-void lista_togli(lista_t &lista, nodo_t *nodo){
-    if (lista != nodo)
-        lista_togli(lista->next, nodo);
-    else
-        lista = lista->next;
-}
-
-void lista_sort(lista_t lista)
-{
-
-
 }
