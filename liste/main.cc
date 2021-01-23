@@ -33,5 +33,9 @@ int main(int argc, char** argv)
     cout << "\t";
         lista_stampa(lista);
 
+    cout << "scambio il secondo con il terzo numero" << endl << "\t";
+    lista_scambia_nodi(lista->next, lista->next->next);
+    lista_stampa(lista);
+
     return 0;
 }

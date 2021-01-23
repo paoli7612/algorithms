@@ -98,3 +98,10 @@ nodo_t* lista_nodo_posizione(lista_t lista, int i, int attuale=0)
     
     return lista_nodo_posizione(lista->next, i, attuale+1);
 }
+
+void lista_scambia_nodi(nodo_t *&n1, nodo_t *&n2)
+{
+    int temp = n1->value;
+    n1->value = n2->value;
+    n2->value = temp;
+}
