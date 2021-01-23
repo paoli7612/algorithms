@@ -9,7 +9,7 @@ struct node_t {
 
 typedef node_t* lista_t;
 
-void lista_aggiungi(lista_t &lista, int value)
+void lista_aggiungi_coda(lista_t &lista, int value)
 {
     if (lista == NULL)
     {
@@ -20,6 +20,15 @@ void lista_aggiungi(lista_t &lista, int value)
     else
         lista_aggiungi(lista->next, value);
 }
+
+void lista_aggiungi_testa(lista_t &lista, int value)
+{
+    lista_t testa = new node_t;
+    testa->value = value;
+    testa->next = lista;
+    lista = testa;
+}
+
 
 void lista_stampa(lista_t lista)
 {
