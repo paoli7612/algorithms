@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 {
     lista_t lista = NULL;
 
-    const char numeri[] = "2634872349023423";
+    const char numeri[] = "123456789091238214327954";
 
     for (size_t i=0; i<strlen(numeri); i++)
         if (numeri[i] > '4')
@@ -36,6 +36,13 @@ int main(int argc, char** argv)
     cout << "scambio il secondo con il terzo numero" << endl << "\t";
     lista_scambia_nodi(lista->next, lista->next->next);
     lista_stampa(lista);
+
+    cout << "Ordino la lista (o almeno ci provo)" << endl << "\t";
+    lista_sort(lista);
+    lista_stampa(lista);
+
+    cout << "Il numero minimo della lista e': " << lista_minimo(lista)->value << endl;
+    cout << "Il numero massimo della lista e': " << lista_massimo(lista)->value << endl;
 
     return 0;
 }

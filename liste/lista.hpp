@@ -66,9 +66,7 @@ void lista_togli_nodo(lista_t &lista, nodo_t *nodo){
     }
 }
 
-void lista_sort(lista_t lista)
-{
-}
+
 
 // ___ Special __
 void lista_stampa(lista_t &lista)
@@ -104,4 +102,35 @@ void lista_scambia_nodi(nodo_t *&n1, nodo_t *&n2)
     int temp = n1->value;
     n1->value = n2->value;
     n2->value = temp;
+}
+
+nodo_t *lista_minimo(lista_t lista, nodo_t *min=NULL)
+{
+    if (lista == NULL)
+        return min;
+
+    if (min == NULL || lista->value < min->value)
+        min = lista;
+
+    return lista_minimo(lista->next, min);
+}
+
+nodo_t *lista_massimo(lista_t lista, nodo_t *max=NULL)
+{
+     if (lista == NULL)
+        return max;
+
+    if (max == NULL || lista->value > max->value)
+        max = lista;
+
+    return lista_massimo(lista->next, max);
+}
+
+void lista_sort(lista_t lista)
+{   
+    if (lista == NULL)
+        return;
+    nodo_t *min = lista_minimo(lista);
+    lista_scambia_nodi(lista, min);
+    lista_sort(lista->next);
 }
