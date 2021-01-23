@@ -2,35 +2,34 @@
 
 using namespace std;
 
-struct node_t {
+struct nodo_t {
     int value;
-    node_t *next;
+    nodo_t *next;
 };
 
-typedef node_t* lista_t;
+typedef nodo_t* lista_t;
 
 void lista_aggiungi_coda(lista_t &lista, int value)
 {
     if (lista == NULL)
     {
-        lista = new node_t;
+        lista = new nodo_t;
         lista->value = value;
         lista->next = NULL;
     }
     else
-        lista_aggiungi(lista->next, value);
+        lista_aggiungi_coda(lista->next, value);
 }
 
 void lista_aggiungi_testa(lista_t &lista, int value)
 {
-    lista_t testa = new node_t;
+    lista_t testa = new nodo_t;
     testa->value = value;
     testa->next = lista;
     lista = testa;
 }
 
-
-void lista_stampa(lista_t lista)
+void lista_stampa(lista_t &lista)
 {
     if (lista == NULL)
     {        
@@ -40,4 +39,17 @@ void lista_stampa(lista_t lista)
         
     cout << lista->value << " ";
     lista_stampa(lista->next);
+}
+
+void lista_togli(lista_t &lista, nodo_t *nodo){
+    if (lista != nodo)
+        lista_togli(lista->next, nodo);
+    else
+        lista = lista->next;
+}
+
+void lista_sort(lista_t lista)
+{
+
+
 }

@@ -21,5 +21,10 @@ int main(int argc, char** argv)
     lista_aggiungi_testa(lista, 1);
     lista_aggiungi_testa(lista, 1);
 
+    lista_togli(lista, lista->next);
+    lista_stampa(lista);
+    lista_togli(lista, lista->next->next);
+    lista_stampa(lista);
+    lista_togli(lista, lista);
     lista_stampa(lista);
 }
