@@ -60,12 +60,14 @@ void lista_togli_nodo(lista_t &lista, nodo_t *nodo){
     if (lista != nodo)
         lista_togli_nodo(lista->next, nodo);
     else
+    {
+        delete lista->next;
         lista = lista->next;
+    }
 }
 
 void lista_sort(lista_t lista)
 {
-
 }
 
 // ___ Special __
