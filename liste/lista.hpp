@@ -29,6 +29,19 @@ void lista_aggiungi_testa(lista_t &lista, int value)
     lista = testa;
 }
 
+void lista_aggiungi_prima_di(lista_t &lista, int value, nodo_t* nodo)
+{
+    if (lista == nodo)
+    {
+        nodo_t* nuovo = new nodo_t;
+        nuovo->value = value;
+        nuovo->next = lista->next;
+        lista = nuovo;
+    }
+    else
+        lista_aggiungi_dopo(lista->next, value, nodo);
+}
+
 void lista_stampa(lista_t &lista)
 {
     if (lista == NULL)

@@ -27,4 +27,9 @@ int main(int argc, char** argv)
     lista_stampa(lista);
     lista_togli(lista, lista);
     lista_stampa(lista);
+
+    lista_aggiungi_prima_di(lista, 99, lista->next->next->next);
+    lista_stampa(lista);
+
+    return 0;
 }
