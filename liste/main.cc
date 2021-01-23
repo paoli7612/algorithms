@@ -20,5 +20,7 @@ int main(int argc, char** argv)
 
     lista_stampa(lista);
 
+    cout << "Lunghezza" << lista_lunghezza(lista) << endl;;
+
     return 0;
 }

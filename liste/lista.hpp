@@ -48,7 +48,7 @@ void lista_aggiungi_in_posizione(lista_t &lista, int value, int index)
 
 }
 
-// __ TOGLI ___
+// ___ TOGLI ___
 void lista_togli_nodo(lista_t &lista, nodo_t *nodo){
     if (lista != nodo)
         lista_togli_nodo(lista->next, nodo);
@@ -61,6 +61,7 @@ void lista_sort(lista_t lista)
 
 }
 
+// ___ Special __
 void lista_stampa(lista_t &lista)
 {
     if (lista == NULL)
@@ -71,4 +72,12 @@ void lista_stampa(lista_t &lista)
         
     cout << lista->value << " ";
     lista_stampa(lista->next);
+}
+
+size_t lista_lunghezza(lista_t lista, int len=0)
+{ 
+    if (lista->next == NULL)
+        return len+1;
+
+    return lista_lunghezza(lista->next, len+1);
 }
