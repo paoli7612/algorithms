@@ -48,6 +48,17 @@ void lista_aggiungi_in_posizione(lista_t &lista, int value, int index)
 
 }
 
+// ___ Cambia ___
+void lista_cambia_posizione(lista_t &lista, int i, int value, int attuale=0)
+{
+    if (attuale == i)
+        lista->value = value;
+    else
+        lista_cambia_posizione(lista->next, value, i, attuale+1);
+}
+
+//void lista_cambia_valori(lista_t, int value, )
+
 // ___ TOGLI ___
 void lista_togli_nodo(lista_t &lista, nodo_t *nodo){
     if (lista != nodo)
@@ -70,14 +81,22 @@ void lista_stampa(lista_t &lista)
         return;
     }
         
-    cout << lista->value << " ";
+    cout << lista->value << "\t";
     lista_stampa(lista->next);
 }
 
-size_t lista_lunghezza(lista_t lista, int len=0)
+int lista_lunghezza(lista_t lista, int len=0)
 { 
     if (lista->next == NULL)
         return len+1;
 
     return lista_lunghezza(lista->next, len+1);
+}
+
+nodo_t* lista_nodo_posizione(lista_t lista, int i, int attuale=0)
+{
+    if (i == attuale)
+        return lista;
+    
+    return lista_nodo_posizione(lista->next, i, attuale+1);
 }
