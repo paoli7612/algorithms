@@ -6,17 +6,33 @@ using namespace std;
 
 int main(int argc, char** argv){
 
+    srand(time(NULL));
+
     lista_t lista = NULL;
 
-    int i;
-    do {
-        cin >> i;
-        if (i < 0)
-            lista_aggiungi_testa(lista, i);
-        else if (i > 0)
-            lista_aggiungi_coda(lista, i);
+    int n;
+
+    if (argc == 1)
+        n = 5;
+    else
+        n = argv[1][0]-'0';
+
+    for (int i=0; i<n; i++)
+    {
+        int value = rand()%20 - 10;
+        lista_aggiungi_coda(lista, value);
         lista_stampa(lista);
-    } while (i != 0);
+    }
+
+    cout << endl << "Lunghezza: " << lista_lunghezza(lista) << endl << endl;
+
+    for (int i=0; i<n; i++)
+    {
+        //lista_togli_nodo(lista, lista);
+        lista_stampa(lista);
+    }
+
+    return 0;
 
     return 0;
 }
