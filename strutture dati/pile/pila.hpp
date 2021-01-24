@@ -53,3 +53,11 @@ void lista_cancella_tutto(pila_t &pila)
     delete pila;
     pila = NULL;
 }
+
+int pila_lunghezza(pila_t pila, int lunghezza=0)
+{
+    if (pila == NULL)
+        return lunghezza;
+    else
+        return pila_lunghezza(pila->next, lunghezza+1);
+}

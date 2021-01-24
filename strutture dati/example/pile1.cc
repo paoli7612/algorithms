@@ -2,13 +2,13 @@
 
 using namespace std;
 
-#include "../code/coda.hpp"
+#include "../pile/pila.hpp"
 
 int main(int argc, char** argv)
 {
     srand(time(NULL));
 
-    coda_t coda = NULL;
+    pila_t pila = NULL;
 
     int n;
 
@@ -20,16 +20,16 @@ int main(int argc, char** argv)
     for (int i=0; i<n; i++)
     {
         int value = rand()%20 - 10;
-        coda_aggiungi(coda, value);
-        coda_stampa(coda);
+        pila_aggiungi(pila, value);
+        pila_stampa(pila);
     }
 
-    cout << endl << "Lunghezza: " << coda_lunghezza(coda) << endl << endl;
+    cout << endl << "Lunghezza: " << pila_lunghezza(pila) << endl << endl;
 
     for (int i=0; i<n; i++)
     {
-        coda_togli(coda);
-        coda_stampa(coda);
+        pila_togli(pila);
+        pila_stampa(pila);
     }
 
     return 0;
