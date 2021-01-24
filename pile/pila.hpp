@@ -48,9 +48,8 @@ void pila_togli(pila_t &pila)
 
 void lista_cancella_tutto(pila_t &pila)
 {
-    if (pila == NULL)
+    if (pila != NULL)
         lista_cancella_tutto(pila->next);
-    cout << "delete" << pila << endl; 
     delete pila;
-    pila = nullptr;
+    pila = NULL;
 }

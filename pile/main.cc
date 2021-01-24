@@ -11,8 +11,10 @@ int main(int argc, char** argv)
     pila_aggiungi(pila, 1);
     pila_aggiungi(pila, 2);
     pila_aggiungi(pila, 3);
+    pila_aggiungi(pila, 7);
+    pila_aggiungi(pila, 2);
     pila_stampa(pila);
-    pila_togli(pila);
+    lista_cancella_tutto(pila);
     pila_stampa(pila);
     return 0;
 }
