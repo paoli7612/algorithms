@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#include "lista.hpp"
+#include "../liste/lista.hpp"
 
 int main(int argc, char** argv){
 
