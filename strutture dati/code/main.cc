@@ -2,22 +2,25 @@
 
 using namespace std;
 
-#include "coda.hpp"
+//#include "coda.hpp"
+#include "codalente.hpp"
 
 int main(int argc, char** argv){
 
-    coda_t coda = NULL;
-    coda_aggiungi(coda, 5);
-    coda_aggiungi(coda, -3);
-    coda_aggiungi(coda, 45);
-    coda_aggiungi(coda, 7);
-    coda_stampa(coda);
+    coda_t coda;
+    coda_inizializza(coda, 10);
 
-    cout << "Lunghezza: " << coda_lunghezza(coda) << endl;
-    cout << "Pop e ottengo: " << coda_togli(coda) << endl;
-    coda_stampa(coda);
-    cout << "Lunghezza: " << coda_lunghezza(coda) << endl;
+    for (int i=0; i<5; i++)
+    {
+        coda_aggiungi(coda, rand()%10);
+        coda_stampa(coda);
+    }
 
+    for (int i=0; i<5; i++)
+    {
+        coda_togli(coda);
+        coda_stampa(coda);
+    }
 
     return 0;
 
