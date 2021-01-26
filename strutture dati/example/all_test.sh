@@ -1,6 +1,10 @@
 echo; echo "                         "
 echo  "                 " CODE;
+echo "   nodi*"
 g++ code1.cc;
+./a.out;
+echo "   scolastico*"
+g++ code2.cc;
 ./a.out;
 
 echo; echo "                         "
