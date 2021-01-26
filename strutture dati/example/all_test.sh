@@ -9,7 +9,11 @@ g++ code2.cc;
 
 echo; echo "                         "
 echo  "                 " PILE;
+echo "   nodi*"
 g++ pile1.cc -o a.out;
+./a.out;
+echo "   scolastico*"
+g++ pile2.cc -o a.out;
 ./a.out;
 
 echo; echo "                         "
