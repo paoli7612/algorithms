@@ -22,10 +22,10 @@ bool coda_inizializza(coda_t &coda, const int N)
     return true;
 }
 
-bool coda_aggiungi(coda_t &coda, int value)
+bool coda_aggiungi(coda_t &coda, const int value)
 {
     if (coda.len == -1)
-        return;
+        return false;
 
     if (coda.len == coda.el)
         return false;
