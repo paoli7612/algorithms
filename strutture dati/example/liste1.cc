@@ -25,14 +25,10 @@ int main(int argc, char** argv){
     }
 
     cout << endl << "Lunghezza: " << lista_lunghezza(lista) << endl << endl;
+    cout << "Sort" << endl;
+    lista_sort(lista);
+    lista_stampa(lista);
 
-    for (int i=0; i<n; i++)
-    {
-        //lista_togli_nodo(lista, lista);
-        lista_stampa(lista);
-    }
-
-    return 0;
 
     return 0;
 }

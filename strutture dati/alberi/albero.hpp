@@ -1,6 +1,4 @@
-// FIFO
-// g++ main.cc -o main.out -Wall --pedantic; ./main.out
-
+#include <iostream>
 
 const int MAX_FIGLI = 2;
 
@@ -71,4 +69,3 @@ void albero_stampa(albero_t &albero, int livello=0)
     for (int i=0; i<MAX_FIGLI; i++)
         albero_stampa(albero->next[i], livello+1);
 }
-
