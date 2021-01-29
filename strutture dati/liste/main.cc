@@ -4,14 +4,14 @@
 
 
 using namespace std;
-#include "lista.hpp"
+#include "listalente.hpp"
 
 int main(int argc, char** argv)
 {
-    lista_t lista = NULL;
+    lista_t lista;
 
     const char numeri[] = "123456789091238214327954";
-
+/*
     for (size_t i=0; i<strlen(numeri); i++)
         if (numeri[i] > '4')
             lista_aggiungi_coda(lista, numeri[i]-'0');
@@ -43,6 +43,6 @@ int main(int argc, char** argv)
 
     cout << "Il numero minimo della lista e': " << lista_minimo(lista)->value << endl;
     cout << "Il numero massimo della lista e': " << lista_massimo(lista)->value << endl;
-
+*/
     return 0;
 }
