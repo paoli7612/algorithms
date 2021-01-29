@@ -8,17 +8,17 @@ using namespace std;
 int main(int argc, char** argv)
 {
     pila_t pila;
-    pila_inizializza(pila, 10);
-    pila_aggiungi(pila, 1);
-    pila_aggiungi(pila, 2);
-    pila_aggiungi(pila, 3);
-    pila_aggiungi(pila, 7);
-    pila_aggiungi(pila, 2);
-    pila_stampa(pila);
+    pila_inizializza(pila, 7);
+    for (int i=0; i<10; i++)
+    {
+        pila_aggiungi(pila, rand()%10);
+        pila_stampa(pila);
+    }
 
-    pila_togli(pila);
-    pila_togli(pila);
-    pila_togli(pila);
-    pila_stampa(pila);
+    for (int i=0; i<10; i++)
+    {
+        pila_togli(pila);
+        pila_stampa(pila);
+    }
     return 0;
 }
