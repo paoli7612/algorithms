@@ -28,7 +28,8 @@ bool lista_aggiungi_coda(lista_t &lista, const int n)
     if (lista.el == lista.len)
         return false;
 
-    lista.vettore[(lista.el++)%lista.len] = n;
+    lista.vettore[(lista.el+lista.first)%lista.len] = n;
+    lista.el++;
     return true;
 }
 

@@ -18,17 +18,18 @@ int main(int argc, char** argv)
     {
         
         
-        int r = rand()%10;
-        if (r > 5)
-            lista_aggiungi_coda(lista, r);
-        else
+        int r = rand()%10+5;
+        cout << r << endl;
+        if (r %2 == 0)
             lista_aggiungi_testa(lista, r);
+        else
+            lista_aggiungi_coda(lista, r);
         lista_stampa(lista);
     }
 
-    cout << "Ordino la lista (o almeno ci provo)" << endl << "\t";
-    lista_sort(lista);
-    lista_stampa(lista);
+    //cout << "Ordino la lista (o almeno ci provo)" << endl << "\t";
+    //lista_sort(lista);
+    //lista_stampa(lista);
 
     return 0;
 }
