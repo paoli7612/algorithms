@@ -1,3 +1,5 @@
+#include <iostream>
+
 struct lista_t {
     int *vettore;
     int len = -1;
@@ -26,7 +28,16 @@ int lista_lunghezza(lista_t lista)
 
 bool lista_aggiungi_coda(lista_t &lista, const int n)
 {
-    if (lista.start == (lista.end + 1)%lista.len)
+    if (lista.len == lista_lunghezza(lista)-1)
         return false;
+
+    lista.vettore[lista.end++] = n;
     return true;
+}
+
+void lista_stampa(const lista_t &lista)
+{
+    for (int i=0; i<lista_lunghezza(lista); i++)
+        cout << lista.vettore[(lista.start+i)%lista.len] << " ";
+    cout << endl;
 }

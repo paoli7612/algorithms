@@ -9,6 +9,9 @@ using namespace std;
 int main(int argc, char** argv)
 {
     lista_t lista;
+    lista_inizializza(lista, 10);
+    lista_aggiungi_coda(lista, 5);
+    lista_stampa(lista);
 
     const char numeri[] = "123456789091238214327954";
 /*
