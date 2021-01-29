@@ -8,18 +8,24 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
+    srand(time(NULL));
+
     lista_t lista;
     lista_inizializza(lista, 10);
-    lista_aggiungi_coda(lista, 5);
-    lista_stampa(lista);
 
-    const char numeri[] = "123456789091238214327954";
-/*
-    for (size_t i=0; i<strlen(numeri); i++)
-        if (numeri[i] > '4')
-            lista_aggiungi_coda(lista, numeri[i]-'0');
+    for (int i=0; i<10; i++)
+    {
+        
+         lista_stampa(lista);
+        int r = rand()%10;
+        if (r > 5)
+            lista_aggiungi_coda(lista, r);
         else
-            lista_aggiungi_testa(lista, numeri[i]-'0');
+            lista_aggiungi_testa(lista, r);
+    }
+        
+    
+/*
 
     cout << "Lista:  ";
     lista_stampa(lista);

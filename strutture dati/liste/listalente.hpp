@@ -31,7 +31,16 @@ bool lista_aggiungi_coda(lista_t &lista, const int n)
     if (lista.len == lista_lunghezza(lista)-1)
         return false;
 
-    lista.vettore[lista.end++] = n;
+    lista.vettore[(lista.end++)%lista.len] = n;
+    return true;
+}
+
+bool lista_aggiungi_testa(lista_t &lista, const int n)
+{
+    if (lista.len == lista_lunghezza(lista)-1)
+        return false;
+
+    lista.vettore[(--lista.start)%lista.len] = n;
     return true;
 }
 
