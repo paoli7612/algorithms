@@ -8,6 +8,11 @@ struct lista_t {
     int el;
 };
 
+int pos(const lista_t &lista, int i)
+{
+    return (lista.first + i) % lista.el;
+}
+
 bool lista_inizializza(lista_t &lista, const int N)
 {
     if (N < 0)
@@ -52,7 +57,7 @@ void lista_stampa(const lista_t &lista)
 {
     cout << lista.el << "/" << lista.len << ":\t";
     for (int i=0; i<lista.el; i++)
-        cout << lista.vettore[(lista.first+i)%lista.len] << " ";
+        cout << lista.vettore[pos(lista, i)] << " ";
     cout << endl;
 }
 
@@ -93,8 +98,11 @@ void lista_scambia(lista_t &lista, int i, int j)
 
 void lista_sort(lista_t &lista)
 {
-    for (int i=0; i<lista.el; i++)
-        for (int j=0; j<lista.el; j++)
-            if (lista.vettore[j] > lista.vettore[j+1])
-                lista_scambia(lista, j, j+1);
+    for (int i=0; i<lista.el-1; i++)
+        for (int j=0; j<lista.el-1; j++)
+        {
+            if (lista.vettore[pos(lista, j)] > lista.vettore[pos(lista, j+1)])
+                lista_scambia(lista, pos(lista, j), pos(lista, j+1));
+        }
+           
 }

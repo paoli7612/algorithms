@@ -27,9 +27,9 @@ int main(int argc, char** argv)
         lista_stampa(lista);
     }
 
-    //cout << "Ordino la lista (o almeno ci provo)" << endl << "\t";
-    //lista_sort(lista);
-    //lista_stampa(lista);
+    cout << "Ordino la lista (o almeno ci provo)" << endl << "\t";
+    lista_sort(lista);
+    lista_stampa(lista);
 
     return 0;
 }
