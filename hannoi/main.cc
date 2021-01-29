@@ -36,16 +36,35 @@ void stampa_partita(const campo_t &partita)
     cout << "< " << a << " - " << b << " - " << c << ">" << endl;
 }
 
+// A -> B
 void muovi(campo_t &partita, const perno_t a, const perno_t b)
 {
-    for (int i=partita.n_dischi-1; i>=0; i--){
-        cout << partita.dischi[i] << endl;
+    for (int i=partita.n_dischi-1; i>=0; i--)
         if (partita.dischi[i] == a)
         {
             partita.dischi[i] = b;
             break;
         }
 }
+
+int testa_perno(const campo_t &partita, const perno_t a)
+{
+    int testa;
+    for (testa = partita.n_dischi-1; testa >= 0; testa--)
+        if (partita.dischi[testa] == a)
+            break;
+    return testa;
+}
+
+// A -> B
+bool mossa_ammessa(campo_t &partita, const perno_t a, const perno_t b)
+{
+    int testa_a = testa_perno(partita, a);
+    int testa_b = testa_perno(partita, b);
+    
+    cout << testa_a << " " << testa_b << endl;
+
+    return testa_a > testa_b;
 }
 
 int main(int argc, char** argv)
@@ -60,6 +79,8 @@ int main(int argc, char** argv)
     muovi(partita, A, C);
 
     stampa_partita(partita);
+
+    cout << mossa_ammessa(partita, C, A) << endl;
 
     return 0;
 }
