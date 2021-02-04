@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 
-#include "code.cc"
+#include "code.h"
 
 using namespace std;
 

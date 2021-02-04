@@ -1,14 +1,12 @@
 # this target will compile all the files
-all: main
-
-main: main.o code.o
-	g++ main.o code.o -o main
+all: main.o coda.o
+	g++ main.o coda.o -o main
 
 main.o: main.cc
 	g++ -c main.cc
 
-code.o: code.cc
-	g++ -c code.cc
-	
+coda.o: coda.cc
+	g++ -c coda.cc
+
 clean:
 	rm -rf *.o main
