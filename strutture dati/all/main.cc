@@ -1,14 +1,14 @@
 #include <iostream>
 #include <ctime>
 
-#include "code.h"
+#include "code.cc"
 
 using namespace std;
 
 int main(int argc, char** argv)
 {
     srand(time(NULL));
-    
+
     coda_t coda;
 
     for (int i=0; i<10; i++){
