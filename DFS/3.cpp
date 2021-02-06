@@ -18,14 +18,19 @@ node_t *new_node(int value)
   return node;
 }
 
-void show(tree_t tree, int level, int current=0)
+void show(tree_t tree, int level, int spaces, int current=0)
 {
   if (tree == NULL)
     return;
   if (level == current)
-    cout << tree->value << " ";
+  {
+    for (int i=0; i<spaces; i++)
+      cout << " ";
+    cout << tree->value;
+  }
+
   for (int i=0; i<2; i++)
-    show(tree->next[i], level, current+1);
+    show(tree->next[i], level, spaces, current+1);
 }
 
 void add_child(tree_t &tree, int level)
@@ -42,16 +47,14 @@ void add_child(tree_t &tree, int level)
 int main(int argc, char** argv)
 {
   srand(time(NULL));
-  const int LIVELLI = 3;
+  const int LIVELLI = 5;
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
 
   for (int i=0; i<LIVELLI+1; i++)
     {
-      for (int j=i; j<LIVELLI; j++)
-        cout << " ";
-      show(tree, i);
+      show(tree, i, (LIVELLI-i)*2);
       cout << endl;
     }
 
