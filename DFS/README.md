@@ -1,4 +1,3 @@
 # Tree
 
-![](01.png)
-manca ancora qualcosa
+![](02.png)
