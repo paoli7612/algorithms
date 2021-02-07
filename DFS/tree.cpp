@@ -38,7 +38,7 @@ void show(tree_t tree, int level, int spaces, int current=0)
   {
     for (int i=0; i<spaces; i++)
       cout << " ";
-    cout << '/' << tree->value << '\\';
+    cout << tree->value << " ";
     for (int i=0; i<spaces; i++)
       cout << " ";
   }
@@ -52,8 +52,7 @@ void show_tree(tree_t tree, const int LIVELLI)
 {
   for (int i=0; i<LIVELLI; i++)
     {
-      for (int j=0; j<LIVELLI-i; j++)
-        cout << " ";
+
       show(tree, i, pow(2, LIVELLI-i-1)-1);
       cout << endl;
     }
