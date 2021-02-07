@@ -42,7 +42,7 @@ void show(tree_t tree, int level, int spaces, int current=0)
     for (int i=0; i<spaces; i++)
       cout << " ";
   }
-  else
+  else if(level > current)
     for (int i=0; i<2; i++)
       show(tree->next[i], level, spaces, current+1);
 }
@@ -52,6 +52,8 @@ void show_tree(tree_t tree, const int LIVELLI)
 {
   for (int i=0; i<LIVELLI; i++)
     {
+      for (int j=0; j<LIVELLI-i; j++)
+        cout << " ";
       show(tree, i, pow(2, LIVELLI-i-1)-1);
       cout << endl;
     }
@@ -60,7 +62,7 @@ void show_tree(tree_t tree, const int LIVELLI)
 int main(int argc, char** argv)
 {
   srand(time(NULL));
-  const int LIVELLI = 6;
+  const int LIVELLI = 7;
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
