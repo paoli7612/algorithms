@@ -23,7 +23,7 @@ void add_child(tree_t &tree, int level)
 {
   if (level == 0)
   return;
-  tree = new_node(rand()%10);
+  tree = new_node(rand()%100);
   for (int i=0; i<2; i++)
   {
     add_child(tree->next[i], level-1);
@@ -37,10 +37,12 @@ void show(tree_t tree, int level, int spaces, int current=0)
   if (level == current)
   {
     for (int i=0; i<spaces; i++)
-      cout << " ";
-    cout << tree->value << " ";
+      cout << "  ";
+    if (tree->value < 10)
+      cout << "  ";
+    cout << tree->value << "  ";
     for (int i=0; i<spaces; i++)
-      cout << " ";
+      cout << "  ";
   }
   else if(level > current)
     for (int i=0; i<2; i++)
@@ -58,15 +60,32 @@ void show_tree(tree_t tree, const int LIVELLI)
     }
 }
 
+bool search(tree_t tree, int value)
+{
+  if (tree == NULL)
+    return false;
+  if (tree->value == value)
+    return true;
+  else
+    cout << tree->value << " controllato" << endl;
+  return search(tree->next[0], value) || search(tree->next[1], value);
+}
+
 int main(int argc, char** argv)
 {
   srand(time(NULL));
-  const int LIVELLI = 7;
+  const int LIVELLI = 6;
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
   show_tree(tree, LIVELLI);
 
-
+  int N;
+  cout << "Inserisci il numero da cercare: ";
+  cin >> N;
+  if (search(tree, N))
+    cout << "Numero presente nell'albero" << endl;
+  else
+    cout << "Il numero non è presente" << endl;
   return 0;
 }
