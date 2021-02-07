@@ -11,6 +11,12 @@ struct tab_t {
 	int quanti;
 };
 
+struct node_t {
+	char carattere;
+	int n;
+	node_t *left, *right;
+};
+
 void init(tab_t &tab, istream &is)
 {
 	char c;
@@ -33,12 +39,12 @@ void init(tab_t &tab, istream &is)
 
 }
 
-int min(tab_t &tab, const int start)
+int max(tab_t &tab, const int start)
 {
 	int m = start;
 	for (int i=start+1; i<tab.quanti; i++)
 	{
-		if (tab.occorrenze[i] < tab.occorrenze[m])
+		if (tab.occorrenze[i] > tab.occorrenze[m])
 			m = i;
 	}
 	return m;
@@ -46,9 +52,12 @@ int min(tab_t &tab, const int start)
 
 void swap(tab_t &tab, int i, int m)
 {
+	// Scambia occorrenze
 	int temp = tab.occorrenze[i];
 	tab.occorrenze[i] = tab.occorrenze[m];
 	tab.occorrenze[m] = temp;
+
+	// Scambia caratteri
 	char temp_c = tab.caratteri[i];
 	tab.caratteri[i] = tab.caratteri[m];
 	tab.caratteri[m] = temp_c;
@@ -58,7 +67,7 @@ void sort(tab_t &tab)
 {
 	for (int i=0; i<tab.quanti-1; i++)
 	{
-		int m = min(tab, i+1);
+		int m = max(tab, i+1);
 		if (i != m)
 			swap(tab, i, m);
 	}
@@ -86,11 +95,21 @@ int main(int argc, char** argv)
 	char* filename = argv[1];
 	ifstream file(filename);
 
+	// carica i caratteri e il numero di occorrenze di ognuno
 	init(tab, file);
 
+	// ordine decrescente dei caratteri
 	sort(tab);
 
+
 	show(tab);
+	for (int i=0; i<2; i++)
+	{
+		node_t *node = new node_t;
+		node->carattere = tab.caratteri[i];
+		node->n = tab.occorrenze[i];
+	}
+	cout << tab.occorrenze[0] << endl;
 
 
 	return 0;
