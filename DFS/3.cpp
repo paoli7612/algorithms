@@ -18,25 +18,10 @@ node_t *new_node(int value)
   return node;
 }
 
-void show(tree_t tree, int level, int spaces, int current=0)
-{
-  if (tree == NULL)
-    return;
-  if (level == current)
-  {
-    for (int i=0; i<spaces; i++)
-      cout << " ";
-    cout << tree->value;
-  }
-
-  for (int i=0; i<2; i++)
-    show(tree->next[i], level, spaces, current+1);
-}
-
 void add_child(tree_t &tree, int level)
 {
   if (level == 0)
-    return;
+  return;
   tree = new_node(rand()%10);
   for (int i=0; i<2; i++)
   {
@@ -44,19 +29,43 @@ void add_child(tree_t &tree, int level)
   }
 }
 
+void show(tree_t tree, int level, int spaces, int current=0, int h=6)
+{
+  if (tree == NULL)
+    return;
+  if (level == current)
+  {
+    for (int i=0; i<spaces+h; i++)
+      cout << " ";
+    cout << '/' << tree->value << '\\';
+  }
+  else
+  {
+    for (int i=0; i<2; i++)
+      show(tree->next[i], level, spaces, current+1, --h);
+  }
+}
+
+
+void show_tree(tree_t tree, const int LIVELLI)
+{
+  for (int i=0; i<LIVELLI; i++)
+    {
+      show(tree, i, (LIVELLI-i-1));
+
+      cout << endl;
+    }
+}
+
 int main(int argc, char** argv)
 {
   srand(time(NULL));
-  const int LIVELLI = 5;
+  const int LIVELLI = 6;
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
+  show_tree(tree, LIVELLI);
 
-  for (int i=0; i<LIVELLI+1; i++)
-    {
-      show(tree, i, (LIVELLI-i)*2);
-      cout << endl;
-    }
 
   return 0;
 }
