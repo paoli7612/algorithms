@@ -39,7 +39,7 @@ void show(tree_t tree, int level, int spaces, int current=0)
     for (int i=0; i<spaces; i++)
       cout << "  ";
     if (tree->value < 10)
-      cout << "  ";
+      cout << " ";
     cout << tree->value << "  ";
     for (int i=0; i<spaces; i++)
       cout << "  ";
