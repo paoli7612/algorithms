@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -29,21 +30,21 @@ void add_child(tree_t &tree, int level)
   }
 }
 
-void show(tree_t tree, int level, int spaces, int current=0, int h=6)
+void show(tree_t tree, int level, int spaces, int current=0)
 {
   if (tree == NULL)
     return;
   if (level == current)
   {
-    for (int i=0; i<spaces+h; i++)
+    for (int i=0; i<spaces; i++)
       cout << " ";
     cout << '/' << tree->value << '\\';
+    for (int i=0; i<spaces; i++)
+      cout << " ";
   }
   else
-  {
     for (int i=0; i<2; i++)
-      show(tree->next[i], level, spaces, current+1, --h);
-  }
+      show(tree->next[i], level, spaces, current+1);
 }
 
 
@@ -51,8 +52,7 @@ void show_tree(tree_t tree, const int LIVELLI)
 {
   for (int i=0; i<LIVELLI; i++)
     {
-      show(tree, i, (LIVELLI-i-1));
-
+      show(tree, i, pow(2, LIVELLI-i-1)-1);
       cout << endl;
     }
 }
