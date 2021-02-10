@@ -74,18 +74,17 @@ void show(const tab_t &tab)
 
 int main(int argc, char** argv)
 {
+	//	Dove salviamo i caratteri e le occorrenze
+	tab_t tab;
 
 	if (argc != 2) // ./a.out file.txt
 	{
 		cerr << "Inserisci il nome del file da comprimere" << endl;
 		return 1;
 	}
-
-	//	Dove salviamo i caratteri e le occorrenze
-	tab_t tab;
-
-	// apre il file prendendo il nome dal primo argomento
 	char* filename = argv[1];
+	
+	// apre il file prendendo il nome dal primo argomento
 	ifstream file(filename);
 
 	// carica i caratteri e il numero di occorrenze di ognuno
@@ -96,8 +95,6 @@ int main(int argc, char** argv)
 
 	// stampa
 	show(tab);
-
-
 
 	return 0;
 }
