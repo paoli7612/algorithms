@@ -1,2 +1,3 @@
-g++ main.cpp -o asd.exe
-start ./asd.exe prova.txt
+g++ main.cc
+start ./a.exe prova.txt
+pause
