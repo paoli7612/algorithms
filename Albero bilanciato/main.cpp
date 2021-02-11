@@ -80,7 +80,12 @@ bool search(tree_t tree, int value)
 int main(int argc, char** argv)
 {
   srand(time(NULL));
-  const int LIVELLI = 4;
+
+  int LIVELLI;
+  do {
+    cout << "Liveli: ";
+    cin >> LIVELLI;
+  } while(LIVELLI < 1 || LIVELLI > 25);
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
