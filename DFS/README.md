@@ -1,3 +1,1 @@
-# Tree
-
-![](02.png)
+prima finiamo la struct di grafo in homework
