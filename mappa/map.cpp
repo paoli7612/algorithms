@@ -3,30 +3,51 @@
 
 #include "map.h"
 
-void map_print(const map_t &map)
+ // stampa
+void map_print(const map_t &map, std::ostream &os)
 {
-  for (int y=0; y<20; y++)
-  {
-    for (int x=0; x<20; x++)
-    {
-      std::cout << map.tile[y][x];
+  for (int y=0; y<map.size.y; y++){
+    for (int x=0; x<map.size.x; x++){
+      if (map.tiles[y][x] < 10)
+        os << " ";
+      os << map.tiles[y][x] << " ";
     }
-    std::cout << std::endl;
+    os << "\n";
   }
 }
 
-void map_new(map_t &map)
+void map_new(map_t &map, const coord_t size)
 {
-  for (int y=0; y<20; y++)
-    for (int x=0; x<20; x++)
-      map.tile[y][x] = 0;
+  map.size = size;
+
+  map.tiles = new tile_t*[map.size.y];
+  for (int y=0; y<map.size.y; y++){
+    map.tiles[y] = new tile_t[map.size.x];
+    for (int x=0; x<map.size.x; x++)
+      map.tiles[y][x] = 2;
+  }
 }
 
+void map_new(map_t &map, const unsigned int x, const unsigned int y)
+{
+  coord_t size;
+  size.x = x;
+  size.y = y;
+  map_new(map, size);
+}
+
+ // Salva su file
 void map_save(const map_t &map, const char filename[])
 {
-  ofstream file(filename);
-
+  std::ofstream file(filename);
   file.write((char*)&map, sizeof(map_t));
+  file.close();
+}
 
+ // Carica da file
+void map_load(map_t &map, const char filename[])
+{
+  std::ifstream file(filename);
+  file.read((char*)&map, sizeof(map_t));
   file.close();
 }

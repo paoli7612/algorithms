@@ -8,11 +8,13 @@ using namespace std;
 int main()
 {
   map_t map;
-  map_new(map);
-  map_print(map);
-  map_save(map, "spawn.dat");
-  getchar();
 
+  map_new(map, 30, 20);
+  map_print(map, cout);
+  map_save(map, "spawn.dat");
+
+  char i;
+  cin >> i;
 
   return 0;
 }
