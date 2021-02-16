@@ -16,6 +16,7 @@ void map_print(const map_t &map, std::ostream &os)
   }
 }
 
+ // alloca spazio
 void map_new(map_t &map, const coord_t size)
 {
   map.size = size;
@@ -40,7 +41,8 @@ void map_new(map_t &map, const unsigned int x, const unsigned int y)
 void map_save(const map_t &map, const char filename[])
 {
   std::ofstream file(filename);
-  file.write((char*)&map, sizeof(map_t));
+
+
   file.close();
 }
 
@@ -48,6 +50,6 @@ void map_save(const map_t &map, const char filename[])
 void map_load(map_t &map, const char filename[])
 {
   std::ifstream file(filename);
-  file.read((char*)&map, sizeof(map_t));
+  
   file.close();
 }
