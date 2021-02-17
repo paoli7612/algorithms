@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 
-#include "coord.h"
 #include "map.h"
 
  // Inizializza mappa a dimensioni size

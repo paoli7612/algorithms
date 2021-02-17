@@ -1,5 +1,7 @@
 #include <iostream>
 
+#include "coord.h"
+
 typedef short int tile_t;
 
 struct map_t {

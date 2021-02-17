@@ -3,7 +3,6 @@
 
 using namespace std;
 
-#include "coord.h"
 #include "map.h"
 
 int main()
@@ -19,6 +18,7 @@ int main()
   map_load(map2, "test/spawn.dat");
 
   map_print(map, cout);
+  map_print(map2, cout);
 
   char c;
   cin >> c;
