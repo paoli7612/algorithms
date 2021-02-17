@@ -9,3 +9,9 @@ coord_t coord_new(unsigned int x, unsigned int y)
   c.y = y;
   return c;
 }
+
+void coord_ask(coord_t &coord, std::istream &is)
+{
+  is >> coord.x;
+  is >> coord.y;
+}
