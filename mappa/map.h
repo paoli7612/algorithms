@@ -3,7 +3,7 @@
 #include "coord.h"
 
 enum sprite_t { NPC, CHEST, BLOCK, DOOR, TORCH, SIGNAL };
-typedef unsigned short short int code_t;
+typedef unsigned short int code_t;
 
 struct tile_t {
   sprite_t sprite;
