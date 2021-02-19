@@ -2,7 +2,13 @@
 
 #include "coord.h"
 
-typedef short int tile_t;
+enum sprite_t { NPC, CHEST, BLOCK, DOOR, TORCH, SIGNAL };
+typedef unsigned short short int code_t;
+
+struct tile_t {
+  sprite_t sprite;
+  code_t code;
+};
 
 struct map_t {
   coord_t size;

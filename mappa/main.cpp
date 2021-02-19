@@ -10,7 +10,10 @@ int main()
   map_t map;
 
   map_new(map, coord_new(10, 10));
-  map_fill(map, coord_new(0, 0), map.size, 2);
+  tile_t tile;
+  tile.sprite = BLOCK;
+  tile.code = -1;
+  map_fill(map, coord_new(0, 0), map.size, tile);
 
   map_save(map, "test/spawn.dat");
 
