@@ -100,7 +100,7 @@ int main(int argc, char** argv)
     cout << "Il numero non è presente" << endl;
 
   char a;
-  cin >> a:
+  cin >> a;
 
   return 0;
 }
