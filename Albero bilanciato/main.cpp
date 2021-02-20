@@ -99,6 +99,8 @@ int main(int argc, char** argv)
   else
     cout << "Il numero non è presente" << endl;
 
-  system("pause");
+  char a;
+  cin >> a:
+
   return 0;
 }
