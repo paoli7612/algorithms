@@ -1,1 +1,1 @@
-g++ main.cpp coord.cpp map.cpp -o main
+g++ main.cpp coord.cpp map.cpp -o main.out
