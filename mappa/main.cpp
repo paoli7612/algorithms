@@ -3,7 +3,6 @@
 #include <ctime>
 #include <cstdlib>
 
-
 using namespace std;
 
 #include "map.h"

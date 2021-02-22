@@ -25,9 +25,15 @@ int main(int argc, char **argv)
 
   coord_t start, end;
   coord_ask(start, cin);
-  coord_ask(end, cin);
+  end.x = start.x+1;
+  end.y = start.y+1;
 
-  map_fill(map, start, end, 12);
+  tile_t tile;
+  tile.sprite = BLOCK;
+  cout << "Inserisci il codice della cella ";
+  coord_print(start);
+  cin >> tile.code;
+  map_fill(map, start, end, tile);
   map_save(map, "test/spawn.dat");
 
   return 0;

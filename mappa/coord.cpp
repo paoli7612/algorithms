@@ -15,3 +15,8 @@ void coord_ask(coord_t &coord, std::istream &is)
   is >> coord.x;
   is >> coord.y;
 }
+
+void coord_print(const coord_t coord)
+{
+  std::cout << "(" << coord.x << " - " << coord.y << ")";
+}
