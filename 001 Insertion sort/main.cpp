@@ -36,4 +36,6 @@ int main(int argc, char** argv){
 	print(array, len);									//disordinato
 	insertion_sort(array, len);					//riordino
 	print(array, len);											//ordinato
+
+	return 0;
 }

@@ -45,4 +45,6 @@ int main()
 	print(array, len);			//disordinato
 	selection_sort(array, len);	//riordino
 	print(array, len);			//ordinato
+
+	return 0;
 }
