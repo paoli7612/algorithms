@@ -1,1 +1,2 @@
 g++ main.cpp -o play
+if errorlevel 1 pause
