@@ -1,16 +1,16 @@
-#include <stdio.h>
+#include <iostream>
 
-// selection sort
+using namespace std;
 
-//ordinamento di array di N caratteri
-
-#define N 10
-
-int* selection_sort(int a[N]){
-	for (int j=0; j<N; j++){
-		int k=a[j], p=j, s;
-		for (int i=j+1; i<N; i++){
-			if (a[i] < k){
+void selection_sort(int *a, const int len)
+{
+	for (int j = 0; j < len; j++)
+	{
+		int k = a[j], p = j, s;
+		for (int i = j + 1; i < len; i++)
+		{
+			if (a[i] < k)
+			{
 				k = a[i];
 				p = i;
 			}
@@ -19,20 +19,30 @@ int* selection_sort(int a[N]){
 		a[j] = k;
 		a[p] = s;
 	}
-
-	return a;
 }
 
-void print_array(int a[N]){
-	for (int i=0; i<N; i++){
-		printf(" %d ", a[i]);
-	}
-	printf("\n");
+void print(const int *array, const int len)
+{
+	for (int i = 0; i < len; i++)
+		cout << array[i] << "\t";
+	cout << endl;
 }
 
-int main(){
-	int array[N] = {1,9,5,4,7,6,3,8,2,0};
-	print_array(array);									//disordinato
-	int* p = selection_sort(array);			//riordino
-	print_array(p);											//ordinato
+int main()
+{
+	srand(time(NULL));
+
+	int len = rand()%20 + 3;
+	int *array = new int[len];
+
+	array = new int[len];
+
+	for (int i=0; i<len; i++)
+		array[i] = rand()%40-20;
+
+	cout << "len: " << len << endl;
+
+	print(array, len);			//disordinato
+	selection_sort(array, len);	//riordino
+	print(array, len);			//ordinato
 }

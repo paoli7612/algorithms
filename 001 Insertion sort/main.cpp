@@ -26,9 +26,7 @@ int main(int argc, char** argv){
 	int len = rand()%20 + 3;
 	int *array = new int[len];
 
-
-	int n, scelta;
-	array = new int[n];
+	array = new int[len];
 
 	for (int i=0; i<len; i++)
 		array[i] = rand()%40-20;
