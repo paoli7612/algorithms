@@ -11,3 +11,5 @@
 9. Cancella l'ultimo elemento della lista
 10. Inserisci elemento in fondo alla lista
 11. Unione/Intersezione/Differenza insiemistica tra due liste :D
+
+# TUTTO SENZA USARE LA RICORSIVITA D:
