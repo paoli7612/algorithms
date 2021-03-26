@@ -23,17 +23,23 @@ list_t aggiungi_testa(list_t lista, int value)
     return node;
 }
 
-list_t aggiungi_coda(list_t lista, int value)
-{   
+
+list_t aggiungi_coda(list_t lista, node_t *nodo)
+{
     if (lista == NULL)
-        return new node_t{value, NULL};
+        return nodo;
 
     node_t *app = lista;
     while (app->next != NULL)
         app = app->next;
 
-    app->next = new node_t{value, NULL};
+    app->next = nodo;
     return lista;
+}
+
+list_t aggiungi_coda(list_t lista, int valore)
+{   
+    return aggiungi_coda(lista, new node_t{valore, NULL});
 }
 
 list_t crea_lista(int n)
@@ -42,6 +48,16 @@ list_t crea_lista(int n)
 
     for (int i=0; i<n; i++)
         list = aggiungi_testa(list, i);
+
+    return list;
+}
+
+list_t crea_lista_casuale(int n)
+{
+    list_t list = NULL;
+
+    for (int i=0; i<n; i++)
+        list = aggiungi_testa(list, rand()%10);
 
     return list;
 }
@@ -157,4 +173,9 @@ list_t cancella_valori(list_t lista, int valore)
         lista = cancella_nodo(lista, app);
     
     return lista;
+}
+
+list_t unione(list_t l, list_t m)
+{
+    return aggiungi_coda(l, m);
 }
