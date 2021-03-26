@@ -65,3 +65,30 @@ node_t *cerca_valore(list_t lista, int valore)
     
     return lista;
 }
+
+int contaa(list_t lista, int valore)
+{
+    int n = 0;
+
+    while (lista != NULL)
+    {
+        n += (lista->value == valore);
+        lista = lista->next;
+    }
+
+    return n;
+}
+
+int conta(list_t lista, int valore)
+{
+    int n=-1; 
+
+    while (lista != NULL)
+    {
+        lista = cerca_valore(lista->next, valore);
+        n++;
+    }
+
+    return n;
+
+}

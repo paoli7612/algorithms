@@ -9,9 +9,10 @@ using namespace std;
 int main(int argc, char **argv)
 {
     list_t l = crea_lista(7);
+    l->next->value = 4;
 
-    cout << cerca_valore(l, 4) << endl;
-    cout << cerca_valore(l, 4)->value << endl;
+    stampa_lista(l);
+    cout << conta(l, 4) << endl;
 
     return 0;
 }

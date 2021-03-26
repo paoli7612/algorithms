@@ -14,3 +14,5 @@ list_t cancella_nodo(list_t, node_t *);
 void cancella_lista(list_t);
 
 node_t *cerca_valore(list_t, int);
+
+int conta(list_t, int);
