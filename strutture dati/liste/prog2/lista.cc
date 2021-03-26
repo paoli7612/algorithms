@@ -92,3 +92,16 @@ int conta(list_t lista, int valore)
     return n;
 
 }
+
+list_t cancella_valori(list_t lista, int valore)
+{
+    node_t *app = lista;
+    while (app != NULL)
+    {
+        if (app->value == valore)
+            lista = cancella_nodo(lista, app);
+        app = app->next;
+    }
+    
+    return lista;
+}

@@ -12,7 +12,7 @@ int main(int argc, char **argv)
     l->next->value = 4;
 
     stampa_lista(l);
-    cout << conta(l, 4) << endl;
-
+    cancella_valori(l, 4);
+    stampa_lista(l);
     return 0;
 }
