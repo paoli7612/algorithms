@@ -9,6 +9,9 @@ using namespace std;
 int main(int argc, char **argv)
 {
     list_t l = crea_lista(7);
-    cancella_lista(l);
+
+    cout << cerca_valore(l, 4) << endl;
+    cout << cerca_valore(l, 4)->value << endl;
+
     return 0;
 }

@@ -57,3 +57,11 @@ void cancella_lista(list_t lista)
     while (lista != NULL)
         lista = cancella_nodo(lista, lista);
 }
+
+node_t *cerca_valore(list_t lista, int valore)
+{
+    while (lista != NULL && lista->value != valore)
+        lista = lista->next;
+    
+    return lista;
+}
