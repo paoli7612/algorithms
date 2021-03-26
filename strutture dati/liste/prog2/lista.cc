@@ -14,13 +14,26 @@ void stampa_lista(list_t lista)
     cout << endl;
 }
 
-list_t aggiungi_testa(list_t list, int value)
+list_t aggiungi_testa(list_t lista, int value)
 {    
     node_t *node = new node_t;
     node->value = value;
-    node->next = list;
+    node->next = lista;
 
     return node;
+}
+
+list_t aggiungi_coda(list_t lista, int value)
+{   
+    if (lista == NULL)
+        return new node_t{value, NULL};
+
+    node_t *app = lista;
+    while (app->next != NULL)
+        app = app->next;
+        
+    app->next = new node_t{value, NULL};
+    return lista;
 }
 
 list_t crea_lista(int n)

@@ -9,10 +9,12 @@ using namespace std;
 int main(int argc, char **argv)
 {
     list_t l = crea_lista(7);
-    l->next->value = 4;
 
     stampa_lista(l);
-    cancella_valori(l, 4);
+
+    l = aggiungi_testa(l, 11);
+    stampa_lista(l);
+    l = aggiungi_coda(l, 11);
     stampa_lista(l);
     return 0;
 }
