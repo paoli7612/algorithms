@@ -192,3 +192,18 @@ list_t unione(list_t l, list_t m)
 
     return u;
 }
+
+list_t intersezione(list_t l, list_t m)
+{
+    list_t u = NULL;
+
+    while (l != NULL)
+    {
+        if (cerca_valore(m, l->value) != NULL) // il valore cè anche nel altra lista
+            u = aggiungi_coda(u, l->value);
+        l = l->next;
+    }
+
+
+    return u;
+}
