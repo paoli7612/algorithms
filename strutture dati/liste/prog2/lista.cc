@@ -14,7 +14,7 @@ void stampa_lista(list_t lista)
     cout << endl;
 }
 
-list_t add_head(list_t list, int value)
+list_t aggiungi_testa(list_t list, int value)
 {    
     node_t *node = new node_t;
     node->value = value;
@@ -28,12 +28,12 @@ list_t crea_lista(int n)
     list_t list = NULL;
 
     for (int i=0; i<n; i++)
-        list = add_head(list, i);
+        list = aggiungi_testa(list, i);
 
     return list;
 }
 
-list_t delete_node(list_t lista, node_t *nodo)
+list_t cancella_nodo(list_t lista, node_t *nodo)
 {
     if (lista == nodo)
     {
@@ -50,4 +50,10 @@ list_t delete_node(list_t lista, node_t *nodo)
     }
 
     return lista;
+}
+
+void cancella_lista(list_t lista)
+{
+    while (lista != NULL)
+        lista = cancella_nodo(lista, lista);
 }

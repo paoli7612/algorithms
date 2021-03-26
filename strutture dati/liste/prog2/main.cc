@@ -9,10 +9,6 @@ using namespace std;
 int main(int argc, char **argv)
 {
     list_t l = crea_lista(7);
-    stampa_lista(l);
-
-    l = delete_node(l, l->next->next);
-
-    stampa_lista(l);
+    cancella_lista(l);
     return 0;
 }
