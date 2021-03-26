@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    list_t l = new node_t{1, new node_t{2, NULL}};
+    list_t l = crea_lista(7);
     stampa_lista(l);
     return 0;
 }
