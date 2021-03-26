@@ -8,13 +8,12 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    list_t l = crea_lista(7);
+    list_t l = crea_lista(1);
 
     stampa_lista(l);
 
-    l = aggiungi_testa(l, 11);
-    stampa_lista(l);
-    l = aggiungi_coda(l, 11);
+
+    l = cancella_coda(l);
     stampa_lista(l);
     return 0;
 }

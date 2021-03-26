@@ -17,6 +17,9 @@ list_t cancella_nodo(list_t, node_t *);
 void cancella_lista(list_t);
 list_t cancella_valori(list_t, int);
 
+list_t cancella_testa(list_t);
+list_t cancella_coda(list_t);
+
 node_t *cerca_valore(list_t, int);
 
 int conta(list_t, int);

@@ -31,7 +31,7 @@ list_t aggiungi_coda(list_t lista, int value)
     node_t *app = lista;
     while (app->next != NULL)
         app = app->next;
-        
+
     app->next = new node_t{value, NULL};
     return lista;
 }
@@ -69,6 +69,36 @@ void cancella_lista(list_t lista)
 {
     while (lista != NULL)
         lista = cancella_nodo(lista, lista);
+}
+
+list_t cancella_testa(list_t lista)
+{
+    node_t *secondo = lista->next;
+    delete lista;
+    return secondo;
+}
+
+list_t cancella_coda(list_t lista)
+{
+    if (lista == NULL) // nothing to do
+        return NULL;
+
+    node_t *app = lista;
+
+    if (lista->next == NULL)
+    {
+        app = app->next;
+        delete lista;
+        return app;
+    }
+
+    while (app->next->next != NULL)
+        app = app->next;
+
+    delete app->next;
+    app->next = NULL;
+
+    return lista;
 }
 
 node_t *cerca_valore(list_t lista, int valore)
