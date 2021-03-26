@@ -13,7 +13,7 @@ int main(int argc, char **argv)
     stampa_lista(l);
     stampa_lista(m);
 
-    list_t u = intersezione(l, m);
+    list_t u = differenza(l, m);
     stampa_lista(u);
 
     return 0;

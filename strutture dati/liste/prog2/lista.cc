@@ -177,6 +177,8 @@ list_t cancella_valori(list_t lista, int valore)
 
 list_t unione(list_t l, list_t m)
 {
+    // lista con tutti gli elementi presenti in l o in m
+
     list_t u = NULL;
 
     while (l != NULL)
@@ -195,6 +197,7 @@ list_t unione(list_t l, list_t m)
 
 list_t intersezione(list_t l, list_t m)
 {
+    // lista con tutti gli elementi presenti in l e in m
     list_t u = NULL;
 
     while (l != NULL)
@@ -204,6 +207,20 @@ list_t intersezione(list_t l, list_t m)
         l = l->next;
     }
 
+    return u;
+}
+
+list_t differenza(list_t l, list_t m)
+{
+    // lista con tutti gli elementi di l non presenti in m
+    list_t u = NULL;
+
+    while (l != NULL)
+    {
+        if (cerca_valore(m, l->value) == NULL) // il valore cè anche nel altra lista
+            u = aggiungi_coda(u, l->value);
+        l = l->next;
+    }
 
     return u;
 }
