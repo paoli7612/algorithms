@@ -27,4 +27,5 @@ node_t *cerca_valore(list_t, int);
 int conta(list_t, int);
 
 list_t unione(list_t, list_t);
-
+list_t intersezione(list_t, list_t);
+list_t differenza(list_t, list_t);

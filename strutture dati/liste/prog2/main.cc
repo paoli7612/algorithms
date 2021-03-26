@@ -13,8 +13,8 @@ int main(int argc, char **argv)
     stampa_lista(l);
     stampa_lista(m);
 
-    l = unione(l, m);
-    stampa_lista(l);
+    list_t u = unione(l, m);
+    stampa_lista(u);
 
     return 0;
 }

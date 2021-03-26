@@ -14,15 +14,15 @@ void stampa_lista(list_t lista)
     cout << endl;
 }
 
-list_t aggiungi_testa(list_t lista, int value)
-{    
-    node_t *node = new node_t;
-    node->value = value;
-    node->next = lista;
-
-    return node;
+list_t aggiungi_testa(list_t lista, node_t* nodo)
+{
+    nodo->next = lista;
+    return nodo;
 }
-
+list_t aggiungi_testa(list_t lista, int valore)
+{    
+    return aggiungi_coda(lista, new node_t{valore, NULL});
+}   
 
 list_t aggiungi_coda(list_t lista, node_t *nodo)
 {
@@ -177,5 +177,18 @@ list_t cancella_valori(list_t lista, int valore)
 
 list_t unione(list_t l, list_t m)
 {
-    return aggiungi_coda(l, m);
+    list_t u = NULL;
+
+    while (l != NULL)
+    {
+        u = aggiungi_coda(u, l->value);
+        l = l->next;
+    }
+    while (m != NULL)
+    {
+        u = aggiungi_coda(u, m->value);
+        m = m->next;
+    }
+
+    return u;
 }
