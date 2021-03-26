@@ -32,3 +32,22 @@ list_t crea_lista(int n)
 
     return list;
 }
+
+list_t delete_node(list_t lista, node_t *nodo)
+{
+    if (lista == nodo)
+    {
+        lista = lista->next;
+        delete nodo;
+    }
+    else 
+    {
+        node_t *app = lista;
+        while (app->next != nodo)
+            app = app->next;
+        
+        app->next = nodo->next;
+    }
+
+    return lista;
+}
