@@ -4,34 +4,24 @@ using namespace std;
 
 #define N 10
 
-void print(const int *array, const int len)
-{
-	for (int i = 0; i < len; i++)
-		cout << array[i] << "\t";
+void print(int *array, const int start, const int end){
+	for (int i=start; i<=end; i++)
+    cout << array[i] << "\t";
 	cout << endl;
 }
 
-void quick_sort(int *array, const int len)
-{
+void quick(int *array, int start, int mid, int end) {
+  
 
+  return;
+}
+
+void quick_sort(int a[], int start, int end) {
 }
 
 int main(void) {
-    srand(time(NULL));
-
-	int len = rand()%20 + 3;
-	int *array = new int[len];
-
-	array = new int[len];
-
-	for (int i=0; i<len; i++)
-		array[i] = rand()%40-20;
-
-	cout << "len: " << len << endl;
-
-	print(array, len);			//disordinato
-	quick_sort(array, len);	//riordino
-	print(array, len);			//ordinato
-
-	return 0;
+  int array[N] = {3, 2, 5, 3, 6, 3, 1, 4, 9, 7};
+  quick_sort(array, 0, 9);
+  print(array, 0, 9);
+  return(0);
 }

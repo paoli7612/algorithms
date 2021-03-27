@@ -10,6 +10,7 @@ int index1(const int array[], const int key){
 	for (int i=0; array[i]!=T; i++)
 		if (key == array[i])
 			return i;
+	return -1;
 }
 
 int index2(const int array[], const int key){
@@ -18,12 +19,12 @@ int index2(const int array[], const int key){
 	
 	int j = dim/2;
 	
+	int i = 0;
+	int j = dim-1;	
+
 	while (array[j] != key)
-	 	if (array[j] < key)
-			j += j/2;
-		else
-			j -= j/2;
-	
+	{
+	}
 	return j;
 }
 
@@ -31,12 +32,11 @@ int main(int argc, char** argv){
 	
 	int array[] = {1, 4, 6, 7, 8, 8, 9, 12, 41, 66, 99, T};
 	
-	int key = 3;
 	
-	cout << index1(array, key) << endl;
-	
-	cout << index2(array, key) << endl;
-	
+	for (int i=0; i<99; i++)
+	{
+		cout << index1(array, i) << " " << index2(array, i) << endl;
+	}
 	
 	return 0;
 }
