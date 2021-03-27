@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    list_t lista;
+    list_t lista = crea_lista(5);
 
     stampa_lista(lista);
 
