@@ -1,11 +1,11 @@
 #include <iostream>
 #include <cstdlib>
 
-struct array_t {
-    int *v;
-    int len;
-};
+#include "array.h"
 
-void array_random(array_t &, const int);
-void array_print(const array_t &);
-void array_delete(array_t &);
+enum sortType { INSERTION, SELECTION, MERGE, BOGO, QUICK};
+
+void insertion_sort(array_t &);
+void selection_sort(array_t &);
+
+void sort(array_t &, const sortType);
