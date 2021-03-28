@@ -3,3 +3,4 @@
 .vscode*
 *play
 *.dat
+*.o
