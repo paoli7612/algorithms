@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <iostream>
 
 // selection sort
 
@@ -6,7 +6,14 @@
 
 #define N 10
 
-int* selection_sort(int a[N]){
+void print_array(int a[N]){
+	for (int i=0; i<N; i++){
+		printf(" %d ", a[i]);
+	}
+	printf("\n");
+}
+
+int* selection_sortt(int a[N]){
 	for (int j=0; j<N; j++){
 		int k=a[j], p=j, s;
 		for (int i=j+1; i<N; i++){
@@ -22,13 +29,37 @@ int* selection_sort(int a[N]){
 
 	return a;
 }
+int* selection_sort(int a[N]){
+	
+	for (int j=0; j<N; j++){
+		system("clear");
+		print_array(a);
+		printf(" ");
+		for (int y=0; y<j; y++)
+			printf("   ");
+		printf("|\n");
+		int k=a[j], p=j, s;
+		for (int i=j+1; i<N; i++){
+			if (a[i] < k){
+				k = a[i];
+				p = i;
+			}
+		}
+		printf(" ");
+		for (int y=0; y<p; y++)
+			printf("   ");
+		printf("u\n");
+		system("sleep 1");
 
-void print_array(int a[N]){
-	for (int i=0; i<N; i++){
-		printf(" %d ", a[i]);
+		s = a[j];
+		a[j] = k;
+		a[p] = s;
 	}
-	printf("\n");
+
+	return a;
 }
+
+
 
 int main(){
 	int array[N] = {1,9,5,4,7,6,3,8,2,0};
