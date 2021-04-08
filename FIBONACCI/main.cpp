@@ -4,6 +4,9 @@ using namespace std;
 
 int fibo(int n, int primo=1, int secondo=1, int c=2)
 {
+    if (n < 2)
+        return 1;
+
     if (c == n)
         return secondo;
 
@@ -17,7 +20,7 @@ int fibo(int n, int primo=1, int secondo=1, int c=2)
 
 int main(int argc, char **argv)
 {
-    cout << fibo(10);
+    cout << fibo(14);
 
     return 0;
 }
