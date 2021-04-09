@@ -11,11 +11,26 @@ class Window:
         self.numbers = pygame.sprite.Group()
         self.font = pygame.font.Font('fonts/arial_narrow_7.ttf', 40)
 
-    def write(self, text, x, y):
-        surface = self.font.render(text, True, (255, 0, 0))
-        rect = surface.get_rect()
-        rect.topleft = (x, y)
-        self.screen.blit(surface, rect)
+    def nuovo_numero(self, numero):
+        surface = self.font.render(str(numero), True, (255, 0, 0))
+        n = Number(surface, len(self.numbers.sprites())*25 + 400, 200, numero)
+        self.numbers.add(n)
+    
+    def imposta_numeri(self, *numeri):
+        for numero in numeri:
+            self.nuovo_numero(numero)
+
+    def scambia(self, a, b):
+        a.dest = b.rect.center
+        b.dest = a.rect.center
+    
+    def minimo(self, start=0):
+        sprites = self.numbers.sprites()
+        m = sprites[start]
+        for sprite in sprites[start+1:]:
+            if sprite.n < m.n:
+                m = sprite
+        return m
 
     def event(self):
         for event in pygame.event.get():
@@ -25,22 +40,8 @@ class Window:
     def update(self):
         self.numbers.update()
     
-    def min(self, start=0):
-        m = None
-        for sprite in self.numbers:
-            m = sprite
-            break
-        for sprite in self.numbers:
-            if sprite.n < m.n:
-                m = sprite
-        return m
-
-    def selection_sort(self, array):
-        for i, a in enumerate(array):
-            surface = self.font.render(str(a), True, (255, 0, 0))
-            n = Number(surface, i*25 + 400, 200, a)
-            self.numbers.add(n)
-        self.min().dest = 20, 20
+    def selection_sort(self):
+        self.scambia(self.numbers.sprites()[0], self.minimo(2))
         self.running = True
         while (self.running):
             self.event()
