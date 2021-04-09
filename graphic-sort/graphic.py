@@ -25,15 +25,22 @@ class Window:
     def update(self):
         self.numbers.update()
     
+    def min(self, start=0):
+        m = None
+        for sprite in self.numbers:
+            m = sprite
+            break
+        for sprite in self.numbers:
+            if sprite.n < m.n:
+                m = sprite
+        return m
+
     def selection_sort(self, array):
         for i, a in enumerate(array):
             surface = self.font.render(str(a), True, (255, 0, 0))
-            n = Number(surface, i*25 + 200, 200)
+            n = Number(surface, i*25 + 400, 200, a)
             self.numbers.add(n)
-        
-        for number in self.numbers:
-            number.dest = 0, 0
-
+        self.min().dest = 20, 20
         self.running = True
         while (self.running):
             self.event()
