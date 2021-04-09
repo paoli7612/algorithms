@@ -9,7 +9,7 @@ class Window:
         self.screen = pygame.display.set_mode((1000, 400))
         self.clock = pygame.time.Clock()
         self.numbers = pygame.sprite.Group()
-        self.font = pygame.font.Font('arial_narrow_7.ttf', 40)
+        self.font = pygame.font.Font('fonts/arial_narrow_7.ttf', 40)
 
     def write(self, text, x, y):
         surface = self.font.render(text, True, (255, 0, 0))
@@ -23,13 +23,16 @@ class Window:
                 self.running = False
 
     def update(self):
-        pass
+        self.numbers.update()
     
     def selection_sort(self, array):
         for i, a in enumerate(array):
             surface = self.font.render(str(a), True, (255, 0, 0))
             n = Number(surface, i*25 + 200, 200)
             self.numbers.add(n)
+        
+        for number in self.numbers:
+            number.dest = 0, 0
 
         self.running = True
         while (self.running):
@@ -39,5 +42,5 @@ class Window:
             self.screen.fill((255, 255, 255))
             self.numbers.draw(self.screen)
             pygame.display.flip()
-
+            
             self.clock.tick(60)
