@@ -1,11 +1,14 @@
 import pygame
 
+from number import Number
+
+pygame.init()
+
 class Window:
     def __init__(self):
-        pygame.init()
         self.screen = pygame.display.set_mode((1000, 400))
         self.clock = pygame.time.Clock()
-        
+        self.numbers = pygame.sprite.Group()
         self.font = pygame.font.Font('arial_narrow_7.ttf', 40)
 
     def write(self, text, x, y):
@@ -16,23 +19,25 @@ class Window:
 
     def event(self):
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == 256:
                 self.running = False
 
     def update(self):
         pass
-
     
-    def sort(self, array):
+    def selection_sort(self, array):
+        for i, a in enumerate(array):
+            surface = self.font.render(str(a), True, (255, 0, 0))
+            n = Number(surface, i*25 + 200, 200)
+            self.numbers.add(n)
+
         self.running = True
         while (self.running):
             self.event()
             self.update()
 
             self.screen.fill((255, 255, 255))
-            for i, a in enumerate(array):
-                self.write(str(a), i*40+30, 20)
-                
+            self.numbers.draw(self.screen)
             pygame.display.flip()
 
             self.clock.tick(60)
