@@ -40,16 +40,16 @@ void merge(int *array, int start, int mid, int end) {
 void merge_sort(int a[], int start, int end) {
   if (start >= end)
     return;
-  print(a, start, end);
-  int mid = (start+end)/2;
-  merge_sort(a, start, mid);
-  merge_sort(a, mid+1, end);
-  merge(a, start, mid, end);
+  int k = (start+end)/2;
+  merge_sort(a, start, k);
+  merge_sort(a, k+1, end);
+  merge(a, start, k, end);
 
 }
 
 int main(void) {
   int array[N] = {3, 2, 5, 3, 6, 3, 1, 4, 9, 7};
+  print(array, 0, 9);
   merge_sort(array, 0, 9);
   print(array, 0, 9);
   return(0);

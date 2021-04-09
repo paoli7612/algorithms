@@ -11,7 +11,7 @@ int main(int argc, char **argv)
     array_random(array, 10);
     array_print(array);
 
-    selection_sort(array);
+    merge_sort(array);
     array_print(array);
     
     array_delete(array);
