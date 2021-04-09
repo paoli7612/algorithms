@@ -53,17 +53,30 @@ void selection_sort(array_t &array)
 	}
 }
 
-void merge_sort(array_t &array, int i=0, int j=-1)
+void merge_sort(array_t &array, int i, int j)
 {
-    if (j == -1) j = array.len-1;
-    else if (i >= j) return;
+    if (i < j)
+    {
+        int k = (i+j)/2;
+        array_print((array_t){&array.v[i], j-i});
+        merge_sort(array, i, k);
+        merge_sort(array, k+1, j);
+        cout << "Merge: " << i << " " << k << " " << j << endl;
 
-    int k = (i+j)/2;
+        // merge
+        int *B = new int[j-i];
+        int index = 0;
 
-    merge_sort(array, i, k);
-    merge_sort(array, k+1, j);
+        int l = i;
+        int r = k+1;
 
-    //MERGE
-    
-    
+        while (l<=k && r <= j)
+        {
+            if (array.v[l] < array.v[r])
+                B[index++] = array.v[l++];
+            else
+                B[index++] 
+        }
+        
+    }
 }
