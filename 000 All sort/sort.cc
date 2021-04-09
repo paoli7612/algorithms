@@ -24,23 +24,6 @@ void swap(int &a, int &b)
     b = t;
 }
 
-void merge(array_t &array, int i, int k, int j)
-{
-    cout << "merge " << i << " " << k << " " << j << endl;
-}
-
-void merge_sort(array_t &array, int i, int j)
-{
-    if (i >= j)
-        return;
-    
-    int k = (i+j)/2;
-    merge_sort(array, i, k);
-    merge_sort(array, k+1, j);
-    merge(array, i, k, j);
-
-}
-
 // DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 void insertion_sort(array_t &array)
@@ -70,7 +53,17 @@ void selection_sort(array_t &array)
 	}
 }
 
-void merge_sort(array_t &array)
+void merge_sort(array_t &array, int i=0, int j=-1)
 {
-    merge_sort(array, 0, array.len);
+    if (j == -1) j = array.len-1;
+    else if (i >= j) return;
+
+    int k = (i+j)/2;
+
+    merge_sort(array, i, k);
+    merge_sort(array, k+1, j);
+
+    //MERGE
+    
+    
 }
