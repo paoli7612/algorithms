@@ -27,7 +27,9 @@ tree_t nuovo_albero(tree_t tree, int n)
 {
     if (n == 0)
         return tree;
-    tree = new node_t {n, NULL, NULL};
+        
+    tree = new node_t {rand()%20, NULL, NULL};
+
     tree->left = nuovo_albero(tree->left, n-1);
     tree->right = nuovo_albero(tree->right, n-1);
 
