@@ -30,13 +30,3 @@ for (int j=0; j<N; j++){
   a[p] = s;
 }
 ```
-003
-<a href="002 Merge sort" >Merge sort</a><br>
-```c++
-if (start < end) {
-  mid = (start+end)/2;
-  merge_sort(a, start, mid);
-  merge_sort(a, mid+1, end);
-  merge(a, start, mid, end);
-}
-```
