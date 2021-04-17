@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void bin_to_dec(const char *bin)
+long long int bin_to_dec(const char *bin)
 {
     int bit = 0;
     for (; bin[bit]!='\0'; bit++);
@@ -14,13 +14,22 @@ void bin_to_dec(const char *bin)
         if (bin[i] == '1')
             sum += pow(2, bit-i-1);
 
-    cout << sum;
+    return sum;
 }
 
 int main(int argc, char const *argv[])
 {
 
-    bin_to_dec("111111100");
+    if (argc != 2)
+    {
+        cerr << "1 argomento: [binario]" << endl;
+        return 1;
+    }
+
+    const char *bin = argv[1];
+    long long int dec = bin_to_dec(bin);
+
+    cout << bin << " -> " << dec << endl;
 
     return 0;
 }
