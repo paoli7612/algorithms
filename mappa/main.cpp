@@ -7,7 +7,7 @@ using namespace std;
 
 #include "map.h"
 
-const int WIDTH = 50, HEIGHT = 50;
+const int WIDTH = 20, HEIGHT = 30;
 
 int main()
 {

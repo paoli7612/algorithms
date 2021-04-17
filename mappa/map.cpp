@@ -19,7 +19,7 @@ void map_print(const map_t &map, std::ostream &os)
 {
   for (int y=0; y<map.size.y; y++){
     for (int x=0; x<map.size.x; x++){
-      os << map.tiles[y][x].code << "\t";
+      os << (int)map.tiles[y][x].code << "\t";
     }
     os << "\n";
   }

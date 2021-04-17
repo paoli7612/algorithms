@@ -1,51 +1,56 @@
-#include <stdio.h>
+#include <iostream>
+
+using namespace std;
 
 #define N 10
 
-void print_array(int a[N]){
-	for (int i=0; i<N; i++){
-		printf(" %d ", a[i]);
-	}
-	printf("\n");
+void print(int *array, const int start, const int end){
+	for (int i=start; i<=end; i++)
+    cout << array[i] << "\t";
+	cout << endl;
 }
 
-void merge(int a[], int start, int mid, int end) {
+void merge(int *array, int start, int mid, int end) {
   int i, j, k=0, b[N];
   i = start;
   j = mid+1;
 
   while (i<=mid && j<=end) {
-    if (a[i]<a[j]) {
-      b[k++] = a[i++];
+    if (array[i]<array[j]) {
+      b[k++] = array[i++];
     } else {
-      b[k++] = a[j++];
+      b[k++] = array[j++];
     }
   }
   while (i <= mid) 
-    b[k++] = a[i++];
+    b[k++] = array[i++];
   
   while (j <= end) 
-    b[k++] = a[j++];
+    b[k++] = array[j++];
   
   for (k=start; k<=end; k++)
-    a[k] = b[k-start];
+    array[k] = b[k-start];
+  
+  print(array, start, mid);
+  print(array, mid+1, end);
+
   return;
 }
 
 void merge_sort(int a[], int start, int end) {
-  int mid;
-  if (start < end) {
-    mid = (start+end)/2;
-    merge_sort(a, start, mid);
-    merge_sort(a, mid+1, end);
-    merge(a, start, mid, end);
-  }
-  return;
+  if (start >= end)
+    return;
+  print(a, start, end);
+  int mid = (start+end)/2;
+  merge_sort(a, start, mid);
+  merge_sort(a, mid+1, end);
+  merge(a, start, mid, end);
+
 }
 
 int main(void) {
-  int array[N] = {1,9,5,4,7,6,3,8,2,0};
-  merge_sort(array, 0, N-1);
-  print_array(array);
+  int array[N] = {3, 2, 5, 3, 6, 3, 1, 4, 9, 7};
+  merge_sort(array, 0, 9);
+  print(array, 0, 9);
   return(0);
 }
