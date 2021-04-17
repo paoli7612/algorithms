@@ -24,6 +24,8 @@ void swap(int &a, int &b)
     b = t;
 }
 
+// DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
+
 void insertion_sort(array_t &array)
 {
     for (int i=1; i<array.len; i++)
@@ -49,4 +51,32 @@ void selection_sort(array_t &array)
 
         swap(array.v[j], array.v[p]);
 	}
+}
+
+void merge_sort(array_t &array, int i, int j)
+{
+    if (i < j)
+    {
+        int k = (i+j)/2;
+        array_print((array_t){&array.v[i], j-i});
+        merge_sort(array, i, k);
+        merge_sort(array, k+1, j);
+        cout << "Merge: " << i << " " << k << " " << j << endl;
+
+        // merge
+        int *B = new int[j-i];
+        int index = 0;
+
+        int l = i;
+        int r = k+1;
+
+        while (l<=k && r <= j)
+        {
+            if (array.v[l] < array.v[r])
+                B[index++] = array.v[l++];
+            else
+                B[index++] 
+        }
+        
+    }
 }
