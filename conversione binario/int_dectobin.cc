@@ -25,8 +25,11 @@ char* dec_to_bin(const char *dec)
 
     char* bin = new char[bit];
 
-
-
+    for (int i=0; i<bit; i++)
+    {
+        bin[bit-i-1] = decimale%2 + '0';
+        decimale /= 2;
+    }
     return bin;
 }
 
