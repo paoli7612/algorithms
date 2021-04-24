@@ -22,3 +22,4 @@ list_t dealloca_coda(list_t list);
 void dealloca_lista(list_t list);
 
 list_t aggiungi_dopo(list_t list, int i, int j);
+list_t aggiungi_a_posizione(list_t lista, int i, int p);

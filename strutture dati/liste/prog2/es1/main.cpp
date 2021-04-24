@@ -13,7 +13,7 @@ int main(int argc, char **argv)
         "1. aggiungi in testa\n"
         "2. aggiungi in coda\n"
         "3. aggiungi dopo elemento\n"
-        "4. inserisci a posizion\n"
+        "4. inserisci dopo la posizione\n"
         "5. rimuovi posizione\n"
         "6. elimina testa\n"
         "7. elimina coda\n"
@@ -63,6 +63,15 @@ int main(int argc, char **argv)
             }
                 break;
             case 4: // inserisci a posizion
+            {
+                int i, p;
+                cout << "inserisci numero da aggiungere alla lista: ";
+                cin >> i;
+                cout << "inerisco il " << i << ", a posizione: ";
+                cin >> p;
+
+                lista = aggiungi_a_posizione(lista, i, p);
+            }
                 break;
             case 5: // rimuovi posizione
                 break;

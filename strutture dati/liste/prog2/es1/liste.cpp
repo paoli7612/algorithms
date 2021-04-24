@@ -91,3 +91,22 @@ list_t aggiungi_dopo(list_t list, int i, int j)
 
     return list;
 }
+
+list_t aggiungi_a_posizione(list_t lista, int i, int p)
+{
+    if (p == 0)
+        return aggiungi_testa(lista, i);
+    
+    list_t ap = lista;
+    while (p != 1)
+    {
+        ap = ap->next;
+        p--;
+    }
+
+    node_t *node = new node_t;
+    node->value = i;
+    node->next = ap->next;
+    ap->next = node;
+    return lista;
+}
