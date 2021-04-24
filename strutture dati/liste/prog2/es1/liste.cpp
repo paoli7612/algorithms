@@ -67,3 +67,9 @@ list_t dealloca_coda(list_t list)
 
     return list;
 }
+
+void dealloca_lista(list_t list)
+{
+    while (list != NULL)
+        list = dealloca_testa(list);
+}
