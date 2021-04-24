@@ -20,5 +20,13 @@ int main(int argc, char **argv)
 
     stampa(lista);
 
+    lista = dealloca_coda(lista);
+
+    stampa(lista);
+
+    lista = dealloca_testa(lista);
+    
+    stampa(lista);
+
     return 0;
 }
