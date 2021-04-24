@@ -52,6 +52,15 @@ int main(int argc, char **argv)
             }
                 break;
             case 3: // aggiungi dopo elemento
+            {
+                int i, j;
+                cout << "inserisci numero da aggiungere alla lista: ";
+                cin >> i;
+                cout << "inerisco il " << i << ", dopo al elemento: ";
+                cin >> j;
+
+                lista = aggiungi_dopo(lista, i, j);
+            }
                 break;
             case 4: // inserisci a posizion
                 break;

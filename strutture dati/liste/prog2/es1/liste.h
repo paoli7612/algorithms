@@ -20,3 +20,5 @@ list_t dealloca_testa(list_t list);
 list_t dealloca_coda(list_t list);
 
 void dealloca_lista(list_t list);
+
+list_t aggiungi_dopo(list_t list, int i, int j);

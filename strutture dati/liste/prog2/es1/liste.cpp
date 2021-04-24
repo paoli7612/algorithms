@@ -73,3 +73,21 @@ void dealloca_lista(list_t list)
     while (list != NULL)
         list = dealloca_testa(list);
 }
+
+list_t aggiungi_dopo(list_t list, int i, int j)
+{
+    list_t ap = list;
+    while (ap != NULL && ap->value != j)
+        ap = ap->next;
+
+    if (ap == NULL) // j non presente
+        throw "non presente";
+    
+    node_t *node = new node_t;
+    node->value = i;
+    node->next = ap->next;
+
+    ap->next = node;
+
+    return list;
+}
