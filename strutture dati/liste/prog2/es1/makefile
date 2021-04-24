@@ -9,4 +9,6 @@ main.out: liste.o
 liste.o:
 	g++ liste.cpp -c -o liste.o
 
+clean:
+	rm main.out liste.o
 	
