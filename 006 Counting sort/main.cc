@@ -9,6 +9,7 @@ void stampa(float array[], const int len)
     cout << endl;
 }
 
+// step (per esempio 0.5 tra [2, 2.5, 3, 3.5]) => intervallo minimo tra le chiavi
 void counting_sort(float array[], const int len, const int max, const float step)
 {
     int l_occ = max/step;

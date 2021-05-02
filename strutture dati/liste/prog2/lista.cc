@@ -21,7 +21,7 @@ list_t aggiungi_testa(list_t lista, node_t* nodo)
 }
 list_t aggiungi_testa(list_t lista, int valore)
 {    
-    return aggiungi_coda(lista, new node_t{valore, NULL});
+    return aggiungi_testa(lista, new node_t{valore, NULL});
 }   
 
 list_t aggiungi_coda(list_t lista, node_t *nodo)
