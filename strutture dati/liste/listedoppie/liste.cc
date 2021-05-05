@@ -44,6 +44,25 @@ void add_next(list_t &list, int value)
     };
 }
 
+void add_back(list_t &list, int value)
+{
+    if (list == NULL)
+    {
+        list = new node_t {value, NULL, NULL};
+        return;
+    }
+
+    node_t *ap = list;
+    while (ap->back != NULL)
+        ap = ap->back;
+
+    ap->back = new node_t {
+        value,  // value
+        NULL,   // back
+        ap    // next
+    };
+}
+
 list_t last(list_t list)
 {
     if (list == NULL)
@@ -51,6 +70,17 @@ list_t last(list_t list)
 
     while (list->next != NULL)
         list = list->next;
+    
+    return list;
+}
+
+list_t first(list_t list)
+{
+    if (list == NULL)
+        return NULL;
+
+    while (list->back != NULL)
+        list = list->back;
     
     return list;
 }
