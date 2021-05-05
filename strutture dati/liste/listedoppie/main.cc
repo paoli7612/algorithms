@@ -5,6 +5,23 @@
 
 using namespace std;
 
+void move(list_t list)
+{
+    int choice;
+    do
+    {
+        cout << list->value << endl;
+        cout << "1. next\n2. back\n0. exit" << endl;
+        cin >> choice;
+        if (choice == 1)
+            next(list);
+        else if (choice == 2)
+            back(list);
+    } while (choice != 0);
+    
+
+}
+
 int main(int argc, char **argv)
 {
 
@@ -15,7 +32,8 @@ int main(int argc, char **argv)
     {
         cout << 
             "\t 1. add next" <<
-            "\t 2. add back" << endl;
+            "\t 2. add back" << 
+            "\t 3. move" << endl;
 
         int choice;
         cin >> choice;
@@ -33,6 +51,10 @@ int main(int argc, char **argv)
             cout << "value: ";
             cin >> value;
             add_back(list, value);
+            break;
+
+        case 3: // move
+            move(list);
             break;
         
         default:
