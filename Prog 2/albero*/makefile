@@ -2,11 +2,11 @@
 run: main.out
 	./main.out
 
-main.out: tree.o
-	g++ main.cpp tree.o -o main.out
+main.out: tree.o queue.o
+	g++ main.cpp tree.o queue.o -o main.out
 
-tree.o: queue.o
-	g++ tree.cpp queue.o -c -o tree.o
+tree.o:
+	g++ tree.cpp -c -o tree.o
 
 queue.o: 
 	g++ queue.cpp -c -o queue.o
