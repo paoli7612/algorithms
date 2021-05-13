@@ -17,4 +17,7 @@ typedef TreeNode_t *Tree_t;
 
 TreeNode_t *new_node(type_t value, Tree_t nextChild=NULL, Tree_t firstChild=NULL);
 
+enum print_mode_t {PREORDER, INORDER, POSTORDER};
+void print(Tree_t tree, const print_mode_t mode);
+
 #endif /* INCLUDE_TREE_H_ */
