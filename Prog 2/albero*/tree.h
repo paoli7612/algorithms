@@ -15,7 +15,7 @@ struct TreeNode_t {
 
 typedef TreeNode_t *Tree_t;
 
-TreeNode_t *new_node(type_t value, Tree_t nextChild=NULL, Tree_t firstChild=NULL);
+TreeNode_t *new_node(type_t value, Tree_t nextSiblings, Tree_t firstChild);
 
 enum print_mode_t {PREORDER, INORDER, POSTORDER};
 void print(Tree_t tree, const print_mode_t mode);
