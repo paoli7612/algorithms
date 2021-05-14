@@ -2,15 +2,29 @@
 
 #include "tree.h"
 
-TreeNode_t *new_node(type_t value, Tree_t nextChild, Tree_t firstChild)
+TreeNode_t *new_node(type_t value, Tree_t nextSiblings, Tree_t firstChild)
 {
-
+    TreeNode_t *node = new TreeNode_t;
+    node->value = value;
+    node->nextSiblings = nextSiblings;
+    node->firstChild = firstChild;
+    return node;
 }
 
 void print_preorder(Tree_t tree)
 {
     if (tree == NULL)
         return;
+    
+    std::cout << tree->value << " (";
+    TreeNode_t *ap = tree->firstChild;
+    while (ap != NULL)
+    {
+        print_preorder(ap);
+        ap = ap->nextSiblings;
+    }
+
+    std::cout << ") ";
 
 }
 
