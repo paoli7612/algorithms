@@ -4,7 +4,7 @@
 #define INCLUDE_TREE_H_
 
 #include "queue.h"
-#include "type.h"
+#include "../type.h"
 
 struct TreeNode_t {
     int value;

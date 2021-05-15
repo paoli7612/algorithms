@@ -4,7 +4,7 @@
 #define INCLUDE_QUEUE_H_
 
 #include "tree.h"
-#include "type.h"
+#include "../type.h"
 
 struct QueueNode_t {
     QueueNode_t *next;
