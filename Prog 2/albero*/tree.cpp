@@ -15,16 +15,20 @@ void print_preorder(Tree_t tree)
 {
     if (tree == NULL)
         return;
-    std::cout << tree->value << " (";
+
+    std::cout << tree->value << " ";
     
     TreeNode_t *ap = tree->firstChild;
+    if (ap == NULL)
+        std::cout << "\b";
     while (ap != NULL)
     {
+        std::cout << "(";
         print_preorder(ap);
         ap = ap->nextSiblings;
+        std::cout << ")";
     }
     
-    std::cout << ") ";
 
 }
 
