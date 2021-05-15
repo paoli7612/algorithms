@@ -19,7 +19,6 @@ List_t add_tail(List_t list, ListNode_t *node)
     ListNode_t *ap;
     for (ap=list; ap->next!=NULL; ap=ap->next);
     ap->next = node;
-
     
     return list;
 }
@@ -39,4 +38,22 @@ void print(List_t list)
 
     std::cout << list->value << " ";
     print(list->next);
+}
+
+
+List_t random_list_new(List_t list, const int len)
+{
+    List_t list = NULL;
+    for (int i=0; i<len; i++)
+    {
+        int r = rand()%10; 
+        list = add_head(list, r);
+    }
+
+
+}
+
+List_t random_list_edit(List_t list)
+{
+
 }
