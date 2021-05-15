@@ -6,18 +6,37 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    //        10
-    //      5    6
-    //     2 3  4 5
+    //         7
+    //      5     6
+    //     1 2   3 4
 
     Tree_t t = new_node(
-        10,
+        7,
         NULL,
         new_node(
             5,
             new_node(
-                6, NULL, NULL
-            ), NULL
+                6,
+                NULL, 
+                new_node(
+                    3,
+                    new_node (
+                        4,
+                        NULL,
+                        NULL
+                    ),
+                    NULL
+                )
+            ), 
+            new_node(
+                1,
+                new_node(
+                    2,
+                    NULL,
+                    NULL
+                ),
+                NULL
+            )
         )
     );
 
