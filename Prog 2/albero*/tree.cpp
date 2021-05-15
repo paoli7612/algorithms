@@ -66,13 +66,10 @@ void print(Tree_t tree, const print_mode_t mode)
 
 int width(Tree_t tree)
 {
-    if (tree == NULL)  
-        return 0;
-
-    int w = 0;
+    int w = 4;
     for (TreeNode_t *ap=tree->firstChild; ap!=NULL; ap=ap->nextSiblings)
         w += width(ap);
-    return w + 1;
+    return w;
 }
 
 void print_graphic(Tree_t tree)
@@ -82,7 +79,6 @@ void print_graphic(Tree_t tree)
     std::cout << tree->value;
     for (int i=0; i<width(tree); i++)
         std::cout << " ";
-
 
     if (tree->nextSiblings != NULL)
         print_graphic(tree->nextSiblings);
