@@ -20,7 +20,7 @@ int main(int argc, char **argv)
                 new_node(
                     9,
                     NULL,
-                    NULL
+                    new_node(1, NULL, NULL)
                 ), 
                 NULL
             ), 
@@ -29,7 +29,11 @@ int main(int argc, char **argv)
                 new_node(
                     2,
                     NULL,
-                    NULL
+                    new_node(
+                        7,
+                        new_node(8, NULL, NULL),
+                        NULL
+                    )
                 ),
                 NULL
             )
