@@ -72,6 +72,23 @@ int width(Tree_t tree)
     return w;
 }
 
+int height(Tree_t tree)
+{
+    if (tree == NULL)
+        return 0;
+    
+    int max = 0;
+    TreeNode_t *ap = tree->firstChild;
+    while (ap != NULL) 
+    {
+        int h = height(ap);
+        if (h > max)
+            max = h;
+        ap = ap->nextSiblings;
+    }
+    return max + 1;
+}
+
 void print_graphic(Tree_t tree)
 {  
     for (int i=0; i<width(tree); i++)
@@ -86,4 +103,37 @@ void print_graphic(Tree_t tree)
         std::cout << std::endl;
         print_graphic(tree->firstChild);
     }
+}
+
+void print_level(Tree_t tree, int spaces, int level, int current=0)
+{
+    if (level == current)
+    {
+        for (int i=0; i<spaces; i++)
+            std::cout << " ";
+        std::cout << tree->value << " ";
+        for (int i=0; i<spaces; i++)
+            std::cout << " ";
+    } else {
+        TreeNode_t *ap = tree->firstChild;
+        while (ap != NULL)
+        {
+            print_level(ap, width(ap)/2, level, current+1);
+            
+            for (int i=0; i<width(ap)/2; i++)
+                std::cout << " ";
+            ap = ap->nextSiblings;
+        }
+    }
+        
+}
+
+void print_graphic2(Tree_t tree)
+{  
+    int h = height(tree);
+    for (int i=0; i<h; i++)
+    {
+        print_level(tree, width(tree)/2, i);
+        std::cout << std::endl;
+    }  
 }
