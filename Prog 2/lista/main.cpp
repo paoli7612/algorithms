@@ -7,13 +7,7 @@ using namespace std;
 int main(int argc, char **argv)
 {
 
-    List_t list = NULL;
-
-    for (int i=0; i<10; i++)
-        list = add_head(list, i);
-    for (int i=0; i<10; i++)
-        list = add_tail(list, i);
-
+    List_t list = random_list_new(10);
     print(list);
 
     return 0;
