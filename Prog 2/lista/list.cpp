@@ -41,7 +41,7 @@ void print(List_t list)
 }
 
 
-List_t random_list_new(List_t list, const int len)
+List_t random_list_new(const int len)
 {
     List_t list = NULL;
     for (int i=0; i<len; i++)
@@ -49,11 +49,10 @@ List_t random_list_new(List_t list, const int len)
         int r = rand()%10; 
         list = add_head(list, r);
     }
-
-
+    return list;
 }
 
-List_t random_list_edit(List_t list)
+void random_list_edit(List_t list)
 {
 
 }
