@@ -18,8 +18,8 @@ List_t add_head(List_t list, type_t value);
 List_t add_tail(List_t list, ListNode_t *node);
 List_t add_tail(List_t list, type_t value);
 
-List_t random_list_new(List_t list, const int len);
-List_t random_list_edit(List_t list);
+List_t random_list_new(const int len);
+void random_list_edit(List_t list);
 
 void print(List_t list);
 
