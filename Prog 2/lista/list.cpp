@@ -60,5 +60,15 @@ List_t random_list_new(const int len)
 
 void random_list_edit(List_t list)
 {
+    while (list != NULL)
+    {
+        list->value = rand()%10;
+        list = list->next;
+    }
+}
 
+void concat(List_t a, List_t b)
+{
+    ListNode_t *l = last(a);
+    l->next = b;
 }

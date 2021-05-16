@@ -25,4 +25,6 @@ void random_list_edit(List_t list);
 
 void print(List_t list);
 
+void concat(List_t a, List_t b);
+
 #endif /* INCLUDE_LIST_H_ */
