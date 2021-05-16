@@ -1,5 +1,12 @@
 #include "list.h"
 
+ListNode_t *last(List_t list)
+{
+    ListNode_t *ap;
+    for (ap=list; ap->next!=NULL; ap=ap->next) ;
+    return ap;
+}
+
 List_t add_head(List_t list, ListNode_t *node)
 {
     node->next = list;
@@ -39,7 +46,6 @@ void print(List_t list)
     std::cout << list->value << " ";
     print(list->next);
 }
-
 
 List_t random_list_new(const int len)
 {

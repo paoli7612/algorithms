@@ -12,6 +12,8 @@ struct ListNode_t {
 
 typedef ListNode_t *List_t;
 
+ListNode_t *last(List_t list);
+
 List_t add_head(List_t list, ListNode_t *node);
 List_t add_head(List_t list, type_t value);
 
