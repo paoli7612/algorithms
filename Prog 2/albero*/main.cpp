@@ -19,12 +19,8 @@ int main(int argc, char **argv)
             2,
             new_node(
                 3,
-                new_node(
-                    4,
-                    NULL,
-                    new_node(9,new_node(0, new_node(1,NULL,NULL),NULL),NULL)),
-                new_node(7, new_node(8,NULL,
-                    new_node(5, new_node(6, NULL, NULL), NULL)),NULL)
+                new_node(4,NULL,new_node(9,new_node(0, new_node(1,NULL,NULL),NULL),NULL)),
+                new_node(7, new_node(8,NULL,new_node(5, new_node(6, NULL, NULL), NULL)),NULL)
             ),
             new_node(5, new_node(6,NULL,NULL),new_node(2, new_node(3, new_node(4, NULL, NULL), NULL), NULL))
         )
