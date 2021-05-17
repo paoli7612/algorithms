@@ -137,3 +137,11 @@ void print_graphic2(Tree_t tree)
         std::cout << std::endl;
     }  
 }
+
+void bfs(Tree_t tree)
+{
+    Queue_t queue = NULL;
+    std::cout << tree->value << std::endl;
+    enqueue(queue, tree);
+    print(queue);
+}

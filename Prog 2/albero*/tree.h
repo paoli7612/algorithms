@@ -22,5 +22,6 @@ void print(Tree_t tree, const print_mode_t mode);
 
 void print_graphic(Tree_t tree);
 void print_graphic2(Tree_t tree);
+void bfs(Tree_t tree);
 
 #endif /* INCLUDE_TREE_H_ */
