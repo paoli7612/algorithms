@@ -141,11 +141,17 @@ void print_graphic2(Tree_t tree)
 void bfs(Tree_t tree)
 {
     Queue_t queue = NULL;
-    std::cout << tree->value << std::endl;
     enqueue(queue, tree);
-    
+
     while (!isEmpty(queue))
     {
         TreeNode_t *n = dequeue(queue);
+
+        for (n=n->firstChild; n!=NULL; n=n->nextSiblings)
+            enqueue(queue, n);
+
+        print(queue);
+        
+        std::cout << std::endl;
     }
 }
