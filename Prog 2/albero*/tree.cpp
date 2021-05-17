@@ -143,5 +143,9 @@ void bfs(Tree_t tree)
     Queue_t queue = NULL;
     std::cout << tree->value << std::endl;
     enqueue(queue, tree);
-    print(queue);
+    
+    while (!isEmpty(queue))
+    {
+        TreeNode_t *n = dequeue(queue);
+    }
 }

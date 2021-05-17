@@ -15,6 +15,21 @@ void enqueue(Queue_t &queue, TreeNode_t *treeNode)
     queue = nq;
 }
 
+TreeNode_t *deleteNext(QueueNode_t *node)
+{
+    TreeNode_t *t = node->next->treeNode;
+    delete node->next;
+    node->next = NULL;
+    return t;
+}
+
+TreeNode_t *dequeue(Queue_t &queue){
+    if (queue == NULL)
+        return NULL;
+    for (; queue->next != NULL; queue=queue->next);
+    return deleteNext(queue);
+}
+
 bool isEmpty(Queue_t queue)
 {
     return queue == NULL;
