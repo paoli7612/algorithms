@@ -1,1 +1,16 @@
 #include "queue.h"
+
+void print(Queue_t queue)
+{
+    for (; queue!=NULL; queue=queue->next)
+        std::cout << queue->treeNode->value << " ";
+    std::cout << std::endl;
+}
+
+void enqueue(Queue_t &queue, TreeNode_t *treeNode)
+{
+    QueueNode_t *nq = new QueueNode_t;
+    nq->treeNode = node;
+    nq->next = queue;
+    queue = nq;
+}
