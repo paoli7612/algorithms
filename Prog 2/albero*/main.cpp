@@ -26,8 +26,7 @@ int main(int argc, char **argv)
         )
     );
 
-    cout << "preorder: ";
-    print(t, PREORDER);
+    bfs(t);
     cout << endl;
 
     return 0;
