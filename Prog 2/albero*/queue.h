@@ -17,5 +17,6 @@ typedef QueueNode_t *Queue_t;
 
 void enqueue(Queue_t &queue, TreeNode_t *treeNode);
 void print(Queue_t queue);
+bool isEmpty(Queue_t queue);
 
 #endif /* INCLUDE_QUEUE_H_ */
