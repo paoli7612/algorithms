@@ -1,5 +1,5 @@
 run: main.out
-	./main.out; rm *.o
+	./main.out $(input); rm *.o
 	
 main.out: grafi.o
 	g++ main.cpp grafi.o liste.o -o main.out

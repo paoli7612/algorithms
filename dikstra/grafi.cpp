@@ -29,6 +29,7 @@ void carica_grafo(Grafo_t &grafo, std::ifstream &file)
 {
     int n_vertici;
     file >> n_vertici;
+    std::cout << n_vertici << " vertici " << std::endl;
 
     init_grafo(grafo, n_vertici);
 
