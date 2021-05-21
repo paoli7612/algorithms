@@ -24,3 +24,20 @@ void stampa_grafo(const Grafo_t &grafo)
         std::cout << std::endl;
     }
 }
+
+void carica_grafo(Grafo_t &grafo, std::ifstream &file)
+{
+    int n_vertici;
+    file >> n_vertici;
+
+    init_grafo(grafo, n_vertici);
+
+    int a, b;
+    float peso;
+    
+    while (file >> a)
+    {
+        file >> b >> peso;
+        nuovo_arco(grafo, a, b, peso);
+    }
+}

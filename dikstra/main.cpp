@@ -8,10 +8,9 @@ int main(int argc, char **argv)
 {
 
     Grafo_t grafo;
-    init_grafo(grafo, 5);
-
-    nuovo_arco(grafo, 1, 3, 5.4f);
-    nuovo_arco(grafo, 1, 5, 12.0f);
+    
+    ifstream file("input1.txt");
+    carica_grafo(grafo, file);
 
     stampa_grafo(grafo);
 
