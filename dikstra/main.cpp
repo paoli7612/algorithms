@@ -20,6 +20,8 @@ int main(int argc, char **argv)
 
     stampa_grafo(grafo);
 
+    
+
 
     return 0;
 }

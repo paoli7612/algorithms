@@ -2,6 +2,7 @@
 #include <fstream>
 
 #include "liste.h"
+#include "alberi.h"
 
 struct Grafo_t {
     int n_vertici;
