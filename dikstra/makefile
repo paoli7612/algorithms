@@ -1,8 +1,14 @@
 run: main.out
-	./main.out
-
+	./main.out; rm *.o
+	
 main.out: grafi.o
 	g++ main.cpp grafi.o -o main.out
 
-grafi.o:
+grafi.o: liste.o
 	g++ grafi.cpp -c -o grafi.o
+
+liste.o:
+	g++ liste.cpp -c -o liste.o
+
+clean:
+	rm *.o*

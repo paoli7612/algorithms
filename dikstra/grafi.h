@@ -1,12 +1,6 @@
 #include <iostream>
 
-struct Node_t {
-    Node_t *next;
-    int vertice;
-    float peso;
-};
-
-typedef Node_t *List_t;
+#include "liste.h"
 
 struct Grafo_t {
     int n_vertici;
