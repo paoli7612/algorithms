@@ -1,12 +1,13 @@
 #include <iostream>
 
-struct Node_t {
-    Node_t *next;
+struct Nodo_t {
+    Nodo_t *next;
     int vertice;
     float peso;
 };
 
-typedef Node_t *List_t;
+typedef Nodo_t *Lista_t;
 
-List_t aggiungi(List_t list, int vertice, float peso);
-List_t aggiungi(List_t list, Node_t *node);
+Lista_t aggiungi(Lista_t lista, int vertice, float peso);
+Lista_t aggiungi(Lista_t lista, Nodo_t *node);
+void stampa_lista(Lista_t lista);

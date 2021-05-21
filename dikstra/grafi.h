@@ -4,7 +4,7 @@
 
 struct Grafo_t {
     int n_vertici;
-    List_t *archi;
+    Lista_t *archi;
 };
 
 void init_grafo(Grafo_t &grafo, const int vertici);

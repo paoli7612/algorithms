@@ -1,19 +1,25 @@
 #include "liste.h"
 
-List_t aggiungi(List_t list, Node_t *node)
+Lista_t aggiungi(Lista_t lista, Nodo_t *node)
 {
-    if (list == NULL)
+    if (lista == NULL)
         return node;
     
-    Node_t *ap = list;
+    Nodo_t *ap = lista;
     for (; ap->next!=NULL; ap=ap->next);
     ap->next = node;
 
-    return list;
+    return lista;
 }
 
-List_t aggiungi(List_t list, int vertice, float peso)
+Lista_t aggiungi(Lista_t lista, int vertice, float peso)
 {
-    return aggiungi(list, new Node_t {NULL,vertice,peso});
+    return aggiungi(lista, new Nodo_t {NULL,vertice,peso});
+}
+
+void stampa_lista(Lista_t lista)
+{
+    for (; lista!=NULL; lista=lista->next)
+        std::cout << "(" << lista->vertice << "[" << lista->peso << "]) ";
 }
 
