@@ -1,5 +1,19 @@
 #include "alberi.h"
 
+void stampa_albero(Albero_t albero)
+{
+    std::cout << albero->vertice << "[" << albero->peso << "]";
+    
+    AlberoNodo_t *ap = albero->primoFiglio;
+    while (ap != NULL)
+    {
+        std::cout << "< ";
+        stampa_albero(ap);
+        ap = ap->prossimoFratello;
+        std::cout << " >";
+    }
+}
+
 void aggiungiFratello(Albero_t albero, AlberoNodo_t *nodo)
 {
     while (albero->prossimoFratello != NULL)

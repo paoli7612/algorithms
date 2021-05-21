@@ -2,7 +2,7 @@ run: main.out
 	./main.out $(input); rm *.o
 	
 main.out: grafi.o liste.o alberi.o
-	g++ main.cpp grafi.o liste.o -o main.out
+	g++ main.cpp grafi.o liste.o alberi.o -o main.out
 
 grafi.o:
 	g++ grafi.cpp -c -o grafi.o

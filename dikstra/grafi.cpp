@@ -42,3 +42,15 @@ void carica_grafo(Grafo_t &grafo, std::ifstream &file)
         nuovo_arco(grafo, a, b, peso);
     }
 }
+
+void albero_di_copertura(const Grafo_t &grafo, Albero_t &albero, int vertice)
+{
+
+    albero = new AlberoNodo_t{vertice, 0, NULL, NULL};
+
+    for (ListaNodo_t *ap = grafo.archi[vertice]; ap!=NULL; ap=ap->next)
+    {
+        aggiungiFiglio(albero, ap->vertice, ap->peso);
+    }
+
+}

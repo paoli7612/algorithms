@@ -20,6 +20,9 @@ int main(int argc, char **argv)
 
     stampa_grafo(grafo);
 
+    Albero_t albero;
+    albero_di_copertura(grafo, albero, 0);
+    stampa_albero(albero);
     
 
 

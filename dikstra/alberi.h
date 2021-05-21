@@ -16,3 +16,5 @@ void aggiungiFratello(Albero_t albero, int vertice, float peso);
 
 void aggiungiFiglio(Albero_t albero, AlberoNodo_t *nodo);
 void aggiungiFiglio(Albero_t albero, int vertice, float peso);
+
+void stampa_albero(Albero_t albero);
