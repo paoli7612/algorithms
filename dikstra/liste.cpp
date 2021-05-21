@@ -20,6 +20,6 @@ Lista_t aggiungi(Lista_t lista, int vertice, float peso)
 void stampa_lista(Lista_t lista)
 {
     for (; lista!=NULL; lista=lista->next)
-        std::cout << "(" << lista->vertice << "[" << lista->peso << "]) ";
+        std::cout << lista->vertice << "[" << lista->peso << "] ";
 }
 
