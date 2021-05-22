@@ -20,7 +20,14 @@ void liste::aggiungi_testa(Lista_t &lista, NodoLista_t *nodo)
 
 void liste::aggiungi_coda(Lista_t &lista, NodoLista_t *nodo)
 {
-    
+    if (lista == NULL)
+        lista = nodo;
+    else
+    {
+        NodoLista_t *ap=lista;
+        for (; ap->next!=NULL; ap=ap->next);
+        ap->next = nodo;
+    }
 }
 
 void liste::aggiungi_testa(Lista_t &lista, int inf)
