@@ -1,5 +1,8 @@
-#include "../include/alberi.h"
+#ifndef MODULO_ALBERI
+#define MODULO_ALBERI
 
+#include <iostream>
+#include <fstream>
 
 struct NodoAlbero_t {
 
@@ -9,3 +12,5 @@ struct NodoAlbero_t {
     NodoAlbero_t *prossimoFratello;
     NodoAlbero_t *padre;
 };
+
+#endif // MODULO_ALBERI
