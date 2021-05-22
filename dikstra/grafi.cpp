@@ -43,7 +43,7 @@ void carica_grafo(Grafo_t &grafo, std::ifstream &file)
     }
 }
 
-void albero_di_copertura(const Grafo_t &grafo, Albero_t &albero, int vertice)
+void albero_di_copertura(const Grafo_t &grafo, Albero_t albero, int vertice)
 {
 
     albero = new AlberoNodo_t{vertice, 0, NULL, NULL};
@@ -52,5 +52,4 @@ void albero_di_copertura(const Grafo_t &grafo, Albero_t &albero, int vertice)
     {
         aggiungiFiglio(albero, ap->vertice, ap->peso);
     }
-
 }
