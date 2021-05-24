@@ -9,7 +9,7 @@ void scambia(int &a, int &b)
     a = a-b;
 }
 
-void counting(int *array, int n, int max)
+void counting_sort(int *array, int n, int max)
 {
     int *a = new int[max+1];
     for(int i=0; i<n; i++) 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 
     stampa(array, len);
 
-    counting(array, 10, 8);
+    counting_sort(array, 10, 8);
 
     stampa(array, len);
 
