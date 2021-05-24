@@ -10,26 +10,18 @@ int main(int argc, char **argv)
 {
 
     Lista_t lista = NULL;
-    liste::aggiungi_coda(lista, 0);
-    liste::aggiungi_coda(lista, 1);
-    liste::aggiungi_coda(lista, 2);
-    liste::aggiungi_testa(lista, 3);
-    liste::aggiungi_testa(lista, 4);
-    liste::aggiungi_testa(lista, 5);
+    for (int i=0; i<10; i++)
+        liste::aggiungi_testa(lista, i);
     
-    
-    liste::stampa(lista);
+
+    for (int i=0; i<5; i++)
+    {
+        liste::rimuovi_nodo(lista->next, lista);
+        liste::stampa(lista);
+    }
 
 
-    liste::aggiungi_coda(lista, 0);
-    liste::aggiungi_coda(lista, 1);
-    liste::aggiungi_coda(lista, 2);
-    liste::aggiungi_testa(lista, 3);
-    liste::aggiungi_testa(lista, 4);
-    liste::aggiungi_testa(lista, 5);
-    
-    
-    liste::stampa(lista);
+
 
 
     
