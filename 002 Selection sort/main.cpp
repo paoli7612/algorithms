@@ -2,7 +2,6 @@
 
 using namespace std;
 
-<<<<<<< HEAD
 //ordinamento di array di N caratteri
 
 #define N 10
@@ -19,17 +18,6 @@ int* selection_sortt(int a[N]){
 		int k=a[j], p=j, s;
 		for (int i=j+1; i<N; i++){
 			if (a[i] < k){
-=======
-void selection_sort(int *a, const int len)
-{
-	for (int j = 0; j < len; j++)
-	{
-		int k = a[j], p = j, s;
-		for (int i = j + 1; i < len; i++)
-		{
-			if (a[i] < k)
-			{
->>>>>>> a088dbd20005ae827e39e89db30acec2e82911df
 				k = a[i];
 				p = i;
 			}
