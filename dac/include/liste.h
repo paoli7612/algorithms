@@ -20,6 +20,8 @@ namespace liste
 
     void aggiungi_testa(Lista_t &lista, int inf);
     void aggiungi_coda(Lista_t &lista, int inf);
+
+    void rimuovi_nodo(Lista_t &lista, NodoLista_t *nodo);
     
 } // namespace liste
 

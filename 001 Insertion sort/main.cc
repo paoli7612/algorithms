@@ -9,19 +9,18 @@ void scambia(int &a, int &b)
     a = a-b;
 }
 
-void counting_sort(int *array, int n, int max)
+void insertion_sort(int *array, int n)
 {
-    int *a = new int[max+1];
-    for(int i=0; i<n; i++) 
-        a[i] = 0;
-
-    for(int i=0; i<n; i++)
-        a[array[i]]++;
-    
-    int index = 0;
-    for (int i=0; i<n; i++)
-        for (int j=0; j<a[i]; j++)
-            array[index++] = i;
+    for (int j=1; j<n; j++)
+    {
+        int key = array[j];
+        int k = j-1;
+        while (k >= 0 && array[k]>key)
+        {
+            scambia(array[k], array[k+1]);
+            k--;
+        }
+    }
 }
 
 void stampa(int *array, int len)
@@ -39,7 +38,7 @@ int main(int argc, char **argv)
 
     stampa(array, len);
 
-    counting_sort(array, 10, 8);
+    insertion_sort(array, 10);
 
     stampa(array, len);
 

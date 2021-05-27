@@ -2,6 +2,17 @@
 
 using namespace std;
 
+int min(int *array, int i, int n)
+{
+    int m = i;
+    for (int j=i+1; j<n; j++)
+    {
+        if (array[m] > array[j])
+            m = j;
+    }
+    return m;
+}
+
 void scambia(int &a, int &b)
 {
     a += b;
@@ -9,19 +20,15 @@ void scambia(int &a, int &b)
     a = a-b;
 }
 
-void counting_sort(int *array, int n, int max)
+void selection_sort(int *array, int i, int n)
 {
-    int *a = new int[max+1];
-    for(int i=0; i<n; i++) 
-        a[i] = 0;
-
-    for(int i=0; i<n; i++)
-        a[array[i]]++;
-    
-    int index = 0;
-    for (int i=0; i<n; i++)
-        for (int j=0; j<a[i]; j++)
-            array[index++] = i;
+    if (i < n-1)
+    {
+        int k = min(array, i, n);
+        if (k != i)
+            scambia(array[i], array[k]);
+        selection_sort(array, i+1, n);
+    }
 }
 
 void stampa(int *array, int len)
@@ -39,7 +46,7 @@ int main(int argc, char **argv)
 
     stampa(array, len);
 
-    counting_sort(array, 10, 8);
+    selection_sort(array, 0, 10);
 
     stampa(array, len);
 
