@@ -17,6 +17,15 @@ node_t *new_node(int id)
     };
 }
 
+int max(int a, int b)
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+
 void insert(tree_t &tree, node_t *node)
 {
     if (tree == NULL)
@@ -29,6 +38,14 @@ void insert(tree_t &tree, node_t *node)
 void insert(tree_t &tree, int id)
 {
     insert(tree, new_node(id));
+}
+
+int height(tree_t tree, int h=0)
+{
+    if (tree == NULL)
+        return 0;
+    else
+        return max(height(tree->left), height(tree->right)) + 1;
 }
 
 void preorder(tree_t tree)
@@ -44,13 +61,18 @@ void preorder(tree_t tree)
 int main(int argc, char **argv)
 {
     tree_t tree = new_node(1);
-    tree->right = new_node(2);
-    preorder(tree);
+    tree->left = new_node(2);
+    tree->right = new_node(4);
+    tree->left->left = new_node(5);
 
     for (int i=0; i<10; i++)
     {
         insert(tree, i);
     }
+
+    preorder(tree);
+
+    cout << height(tree) << endl;
 
     return 0;
 }
