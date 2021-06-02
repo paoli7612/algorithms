@@ -1,7 +1,7 @@
 a = [32, 32, 30, 6, 28, 17, 19, 4, 15, 25, 34, 15]
-l = list()
-for _ in a:
-    l.append(1)
+
+# creo l'altra lista di uguali dimensioni con tutti 1
+l = [1]*len(a)
 
 def foo(a, v):
     p = list()
