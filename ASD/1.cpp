@@ -25,21 +25,6 @@ int max(int a, int b)
         return b;
 }
 
-
-void insert(tree_t &tree, node_t *node)
-{
-    if (tree == NULL)
-    {
-        tree = node;
-        return;
-    }
-}
-
-void insert(tree_t &tree, int id)
-{
-    insert(tree, new_node(id));
-}
-
 int height(tree_t tree, int h=0)
 {
     if (tree == NULL)
@@ -48,22 +33,55 @@ int height(tree_t tree, int h=0)
         return max(height(tree->left), height(tree->right)) + 1;
 }
 
+void insert(tree_t &tree, node_t *node)
+{
+    if (tree == NULL)
+    {
+        tree = node;
+        return;
+    }
+
+    if (tree->right == NULL)
+    {
+        if (tree->left == NULL)
+            tree->left = node;
+        else
+            tree->right = node;
+    }
+    else
+    {
+        int l = height(tree->left);
+        int r = height(tree->right);
+
+        if (l > r)
+            insert(tree->right, node);
+        else
+            insert(tree->left, node);
+    }
+
+}
+
+void insert(tree_t &tree, int id)
+{
+    insert(tree, new_node(id));
+}
+
+
+
 void preorder(tree_t tree)
 {
     if (tree == NULL)
         return;
     
-    cout << tree->id << " ";
+    cout << tree->id << "(";
     preorder(tree->left);
     preorder(tree->right);
+    cout << ") ";
 }
 
 int main(int argc, char **argv)
 {
     tree_t tree = new_node(1);
-    tree->left = new_node(2);
-    tree->right = new_node(4);
-    tree->left->left = new_node(5);
 
     for (int i=0; i<10; i++)
     {
@@ -71,8 +89,6 @@ int main(int argc, char **argv)
     }
 
     preorder(tree);
-
-    cout << height(tree) << endl;
 
     return 0;
 }
