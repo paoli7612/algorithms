@@ -1,5 +1,5 @@
-a = [30, 34, 11, 34, 5, 30, 17, 13, 12, 8, 30, 18]
-l = [ 1,  1,  1,  1, 1,  1,  1,  1,  1, 1,  1,  1]
+a = [32, 32, 30, 6, 28, 17, 19, 4, 15, 25, 34, 15]
+l = [ 1,  1,  1, 1,  1,  1,  1, 1,  1,  1,  1,  1]
 
 for x, i in enumerate(a[1:]):
     for y, j in enumerate(a):
@@ -9,6 +9,3 @@ for x, i in enumerate(a[1:]):
             break
 
 print(l)
-
-# L = [1, 2, 1, 2, 1, 2, 2, 2, 2, 2, 3, 3]
-# max(L) -> 3 -> LONGEST INCREASING SUBSEQUENCE
