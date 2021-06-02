@@ -17,25 +17,40 @@ node_t *new_node(int id)
     };
 }
 
-void insert(tree_t tree, node_t *node)
+void insert(tree_t &tree, node_t *node)
 {
-
+    if (tree == NULL)
+    {
+        tree = node;
+        return;
+    }
 }
 
-void insert(tree_t tree, int id)
+void insert(tree_t &tree, int id)
 {
     insert(tree, new_node(id));
 }
 
+void preorder(tree_t tree)
+{
+    if (tree == NULL)
+        return;
+    
+    cout << tree->id << " ";
+    preorder(tree->left);
+    preorder(tree->right);
+}
+
 int main(int argc, char **argv)
 {
+    tree_t tree = new_node(1);
+    tree->right = new_node(2);
+    preorder(tree);
 
-    tree_t tree = NULL;
     for (int i=0; i<10; i++)
     {
         insert(tree, i);
     }
-
 
     return 0;
 }
