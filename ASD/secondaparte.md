@@ -35,3 +35,13 @@
     INPUT: Grafo diretto G = (V, E), per cui abbiamo V = {1, . . . , n}, un nodo v ∈ V e un valore intero 0 < k < n.
     OUTPUT: stampare tutti gli identificativi dei nodi a distanza esattamente k da v.
     Rappresentazione del grafo a scelta. Costo computazionale.
+
+1. Dato un array A di n naturali, tale che A[0] < ... < A[n − 1],
+    l’indice i ∈ {1, ..., n − 1} `e detto un salto, se vale
+    che A[i − 1] + 1 < A[i]. Mostrare due esempi di array A con n ≥ 5 tali che: in un esempio non ci sia un salto,
+    in un esempio ci sia. Scrivere un algoritmo (dando una breve descrizione a parole e lo pseudocodice) di costo
+    computazionale O(log n) che restituisca -1 se l’array A non ha un salto, l’indice di un salto altrimenti.
+2. Si consideri il seguente problema:
+    INPUT: un DAG G = (V, E) con V = {1, . . . , n} memorizzato tramite liste di adiacenza
+    OUTPUT: stampare degli identificativi delle sorgenti del grafo
+    Fornire lo pseudocodice di un algoritmo e studiarne il costo computazionale.
