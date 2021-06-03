@@ -3,9 +3,7 @@
 ```*OUTPUT*```: stampa delle chiavi che sono contenute sia in H1 che in H2 (cioè, nell’intersezione tra le chiavi di H1 e H2).
 Fornire un esempio di INPUT e OUTPUT al problema con n1, n2 > 10 e intersezione delle chiavi NON vuota. Progettare un algoritmo che risolva il problema, utilizzando la rappresentazione ad alto livello dell’heap (ovvero le primitive e non la rappresentazione con array). Descrivere l’algoritmo a parole e fornire lo pseudocodice. Spiegare perch´e l’algoritmo è corretto. Discutere il costo computazionale dell’algoritmo.
 
-```*[-]*``` Si consideri un array A di n interi, il cui valore pu`o essere solo 0, 1 o 2. Scrivere un algoritmo di costo lineare O(n) che ordini l’array ”in loco” tenendo conto che: 
-- l’algoritmo pu`o SOLO scambiare elementi dell’array 
-- l’algoritmo NON pu`o usare contatori o array di appoggio
+
 
 
 ```*[-]*``` Si consideri il seguente problema
