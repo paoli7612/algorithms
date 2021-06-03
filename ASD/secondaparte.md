@@ -1,47 +1,28 @@
-1. Si consideri il seguente problema:
-    INPUT: due min-heap H1 e H2 di dimensione n1 e n2 rispettivamente, con n1 > n2.
-    OUTPUT: stampa delle chiavi che sono contenute sia in H1 che in H2 (cio`e, nell’intersezione tra le chiavi di H1 e
-    H2).
-    Fornire un esempio di INPUT e OUTPUT al problema con n1, n2 > 10 e intersezione delle chiavi NON vuota.
-    Progettare un algoritmo che risolva il problema, utilizzando la rappresentazione ad alto livello dell’heap (ovvero le
-    primitive e non la rappresentazione con array). Descrivere l’algoritmo a parole e fornire lo pseudocodice.
-    Spiegare perch´e l’algoritmo `e corretto.
-    Discutere il costo computazionale dell’algoritmo.
-2. Si consideri un array A di n interi, il cui valore pu`o essere solo 0, 1 o 2.
-    Scrivere un algoritmo di costo lineare O(n)
-    che ordini l’array ”in loco” tenendo conto che:
-    1. l’algoritmo pu`o SOLO scambiare elementi dell’array
-    2. l’algoritmo NON pu`o usare contatori o array di appoggio
+[-] Si consideri il seguente problema: INPUT: due min-heap H1 e H2 di dimensione n1 e n2 rispettivamente, con n1 > n1. OUTPUT: stampa delle chiavi che sono contenute sia in H1 che in H2 (cio`e, nell’intersezione tra le chiavi di H1 e H2). Fornire un esempio di INPUT e OUTPUT al problema con n1, n2 > 10 e intersezione delle chiavi NON vuota. Progettare un algoritmo che risolva il problema, utilizzando la rappresentazione ad alto livello dell’heap (ovvero le primitive e non la rappresentazione con array). Descrivere l’algoritmo a parole e fornire lo pseudocodice. Spiegare perch´e l’algoritmo `e corretto. Discutere il costo computazionale dell’algoritmo.
 
-1. Si consideri il seguente problema:
-    INPUT: un albero binario T realizzato con nodi e puntatori e il puntatore p ad un nodo dell’albero. I campi di
-    ogni nodo dell’albero sono: lef t puntatore al figlio destro, right puntatore al figlio sinistro, key con identificativo
-    ID del nodo.
-    OUTPUT: stampa di tutti gli ID dei nodi che sono antenati di p in T seguiti dal messaggio ”non ci sono altri
-    antenati”, oppure il messaggio ”non ci sono antenati” nel caso in cui non ce ne siano.
-    Fornire lo pseudo-codice di algoritmo che sfrutta la ricorsione per risolvere il problema. Studiare il costo computazionale dell’algoritmo proposto. Fornire un esempio con un albero T di altezza almeno due mostrando l’ordine
-    delle chiamate ricorsive e il ritorno dalle chiamata.
-2. Si consideri il seguente problema:
-    INPUT: un array A di n caratteri, una costante intera dispari k ∈ O(1) tale che k ≤ n.
-    OUTPUT: VERO se esiste una sequenza di caratteri palindroma in A, di lunghezza con almeno k caratteri (si ricorda che una sequenza `e palindroma se si pu`o leggere indifferentemente da sinistra a desta o da destra a sinistra), FALSO altrimenti.
-    Spiegare brevemente a parole il funzionamento dell’algoritmo e fornire lo presudo-codice. Studiare il costo computazionale dell’algoritmo proposto.
+[-] Si consideri un array A di n interi, il cui valore pu`o essere solo 0, 1 o 2. Scrivere un algoritmo di costo lineare O(n) che ordini l’array ”in loco” tenendo conto che: 
+- l’algoritmo pu`o SOLO scambiare elementi dell’array 
+- l’algoritmo NON pu`o usare contatori o array di appoggio
 
-1. Si consideri il seguente problema:
-    INPUT: A un array di n valori reali e x un valore reale.
-    OUTPUT: VERO se esistono due elementi del array la cui somma `e x, FALSO altrimenti.
-    Scrivere un algoritmo per il problema di costo O(n log n). Spiegare il suo funzionamento brevemente a parole e
-    fornire lo pseudo-codice.
-2. Si consideri il seguente problema:
-    INPUT: Grafo diretto G = (V, E), per cui abbiamo V = {1, . . . , n}, un nodo v ∈ V e un valore intero 0 < k < n.
-    OUTPUT: stampare tutti gli identificativi dei nodi a distanza esattamente k da v.
-    Rappresentazione del grafo a scelta. Costo computazionale.
 
-1. Dato un array A di n naturali, tale che A[0] < ... < A[n − 1],
-    l’indice i ∈ {1, ..., n − 1} `e detto un salto, se vale
-    che A[i − 1] + 1 < A[i]. Mostrare due esempi di array A con n ≥ 5 tali che: in un esempio non ci sia un salto,
-    in un esempio ci sia. Scrivere un algoritmo (dando una breve descrizione a parole e lo pseudocodice) di costo
-    computazionale O(log n) che restituisca -1 se l’array A non ha un salto, l’indice di un salto altrimenti.
-2. Si consideri il seguente problema:
-    INPUT: un DAG G = (V, E) con V = {1, . . . , n} memorizzato tramite liste di adiacenza
-    OUTPUT: stampare degli identificativi delle sorgenti del grafo
-    Fornire lo pseudocodice di un algoritmo e studiarne il costo computazionale.
+[-] Si consideri il seguente problema: INPUT: un albero binario T realizzato con nodi e puntatori e il  puntatore p ad un nodo dell’albero. I campi di ogni nodo dell’albero sono: lef t puntatore al figlio destro, right puntatore al figlio sinistro, key con identificativo ID del nodo. OUTPUT: stampa di tutti gli ID dei nodi che sono antenati di p in T seguiti dal messaggio ”non ci sono altri antenati”, oppure il messaggio ”non ci sono antenati” nel casoin cui non ce ne siano. Fornire lo pseudo-codice di algoritmo che sfrutta la ricorsione per risolvere il problema. Studiare il costo computazionale dell’algoritmo proposto. Fornire un esempio con un albero T di altezza almeno due mostrando l’ordine delle chiamate ricorsive e il ritorno dalle chiamata.
+
+[-] Si consideri il seguente problema: INPUT: un array A di n caratteri, una costante intera dispari k ∈ O(1) tale che k ≤ n. OUTPUT: VERO se esiste una sequenza di caratteri palindroma in A, di lunghezza con almeno k caratteri (si ricorda che una sequenza `e palindroma se si pu`o leggere indifferentemente da sinistra a desta o da destra a sinistra), FALSO altrimenti. Spiegare brevemente a parole il funzionamento dell’algoritmo e fornire lo presudo-codice. Studiare il costo computazionale dell’algoritmo proposto.
+
+[-] Si consideri il seguente problema: INPUT: A un array di n valori reali e x un valore reale. OUTPUT: VERO se esistono due elementi del array la cui somma `e x, FALSO altrimenti. Scrivere un algoritmo per il problema di costo O(n log n). Spiegare il suo funzionamento brevemente a parole e fornire lo pseudo-codice.
+
+[-] Si consideri il seguente problema: INPUT: Grafo diretto G = (V, E), per cui abbiamo V = {1, . . . , n}, un nodo v ∈ V e un valore intero 0 < k < n. OUTPUT: stampare tutti gli identificativi dei nodi a distanza esattamente k da v. Rappresentazione del grafo a scelta. Costo computazionale.
+
+[-] Dato un array A di n naturali, tale che A[0] < ... < A[n − 1], l’indice i ∈ {1, ..., n − 1} `e detto un salto, se vale che A[i − 1] + 1 < A[i]. Mostrare due esempi di array A con n ≥ 5 tali che: in un esempio non ci sia un salto, in un esempio ci sia. Scrivere un algoritmo (dando una breve descrizione a parole e lo pseudocodice) di costo computazionale O(log n) che restituisca -1 se l’array A non ha un salto, l’indice di un salto altrimenti.
+
+[-] Si consideri il seguente problema: INPUT: un DAG G = (V, E) con V = {1, . . . , n} memorizzato tramite liste di adiacenza OUTPUT: stampare degli identificativi delle sorgenti del grafo Fornire lo pseudocodice di un algoritmo e studiarne il costo computazionale.
+
+[-] Un SumTree `e un albero binario che memorizza chiavi numeriche nei nodi e in cui la chiave di ogni nodo interno v `e uguale alla somma delle chiavi degli ALTRI nodi nel sottoalbero radicato in v. Si mostrino due esempi di alberi binari di altezza almeno 3: (1) uno che sia un SumTree e (2) uno che non lo sia. Si consideri il seguente problema: INPUT: albero binario T memorizzato tramite nodi e puntatori (campo con puntatore a figlio sinistro, campo con puntatore a figlio destro e campo key) che memorizza interi strettamente positivi (> 0) nel campo key. OUTPUT: VERO se l’albero `e un SumTree e FALSO altrimenti 
+- Si scriva un algoritmo che risolva il problema. Descrivere brevemente la soluzione a parole e fornire lo pseudocodice. 
+- Studiare il costo computazionale dell’algoritmo proposto
+
+[-] Si consideri il seguente problema: INPUT: Due array A e B entrambi di dimensione n (nota) che memorizzano interi positivi, e il valore massimo memorizzato nei due array k tale che k ≤ n (noto). OUTPUT: VERO se i due array memorizzano lo stesso insieme di naturali con la stessa numerosit`a, FALSO altrimenti. Fornire lo pseudocodice di un algoritmo di costo computazionale LINEARE che risolva il problema.
+
+[-] Si consideri il seguente problema: INPUT: un albero binario T realizzato con nodi e puntatori. I campi di ogni nodo dell’albero sono: lef t puntatore al figlio sinistro, right puntatore al figlio destro, key che memorizza un numero naturale. OUTPUT: per ogni nodo u dell’albero, stampare la media dei valori contenuti nei nodi del sottoalbero radicato in u (radice compresa) Fornire un esempio di input e output del problema con un albero T di altezza almeno tre. Fornire lo pseudo-codice di un algoritmo che utilizzi la ricorsione ma che NON usi variabili globali all’interno delle chiamate ricorsive. Studiare il costo computazionale dell’algoritmo proposto.
+
+[-] Si consideri il seguente problema: INPUT: un grafo DIRETTO G = (V, E) di n ≥ 3 nodi (con identificativi gli interi compresi tra 1 e n), tre nodi del grafo u, v, w ∈ V . OUTPUT (10 punti): la lunghezza del cammino pi`u breve che va dal nodo u al nodo v e che NON passa per w. OUTPUT (12 punti): stampa dei nodi sul cammino pi`u breve che va dal nodo u al nodo v e che NON passa per w (nell’odine giusto), oppure stampa ”non esiste cammino” nel caso in cui tale cammino non esista. Usare la rappresentazione ad alto livello del grafo. Spiegare brevemente a parole il funzionamento dell’algoritmo e fornire lo presudo-codice. Studiare il costo computazionale dell’algoritmo proposto.
