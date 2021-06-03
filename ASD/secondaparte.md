@@ -25,3 +25,13 @@
     INPUT: un array A di n caratteri, una costante intera dispari k ∈ O(1) tale che k ≤ n.
     OUTPUT: VERO se esiste una sequenza di caratteri palindroma in A, di lunghezza con almeno k caratteri (si ricorda che una sequenza `e palindroma se si pu`o leggere indifferentemente da sinistra a desta o da destra a sinistra), FALSO altrimenti.
     Spiegare brevemente a parole il funzionamento dell’algoritmo e fornire lo presudo-codice. Studiare il costo computazionale dell’algoritmo proposto.
+
+1. Si consideri il seguente problema:
+    INPUT: A un array di n valori reali e x un valore reale.
+    OUTPUT: VERO se esistono due elementi del array la cui somma `e x, FALSO altrimenti.
+    Scrivere un algoritmo per il problema di costo O(n log n). Spiegare il suo funzionamento brevemente a parole e
+    fornire lo pseudo-codice.
+2. Si consideri il seguente problema:
+    INPUT: Grafo diretto G = (V, E), per cui abbiamo V = {1, . . . , n}, un nodo v ∈ V e un valore intero 0 < k < n.
+    OUTPUT: stampare tutti gli identificativi dei nodi a distanza esattamente k da v.
+    Rappresentazione del grafo a scelta. Costo computazionale.
