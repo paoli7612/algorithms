@@ -1,9 +1,3 @@
-*[-]*``` Si consideri il seguente problema:
-```*INPUT*```: due min-heap H1 e H2 di dimensione n1 e n2 rispettivamente, con n1 > n2.
-```*OUTPUT*```: stampa delle chiavi che sono contenute sia in H1 che in H2 (cioè, nell’intersezione tra le chiavi di H1 e H2).
-Fornire un esempio di INPUT e OUTPUT al problema con n1, n2 > 10 e intersezione delle chiavi NON vuota. Progettare un algoritmo che risolva il problema, utilizzando la rappresentazione ad alto livello dell’heap (ovvero le primitive e non la rappresentazione con array). Descrivere l’algoritmo a parole e fornire lo pseudocodice. Spiegare perch´e l’algoritmo è corretto. Discutere il costo computazionale dell’algoritmo.
-
-
 
 
 ```*[-]*``` Si consideri il seguente problema
