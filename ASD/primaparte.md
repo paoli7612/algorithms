@@ -1,0 +1,8 @@
+- Huffman
+- Prim / Kruskal
+- Master Theorem
+- Longest increasing subsequence
+- Bellman Ford
+- Dijstra
+- Bruteforce
+- 
