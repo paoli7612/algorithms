@@ -1,5 +1,13 @@
 #include "../include/alberi.h"
 
+Albero_t alberi::nuovo_nodo(int value, NodoAlbero_t *primoFiglio=NULL, NodoAlbero_t *prossimoFratello=NULL, NodoAlbero_t *padre=NULL)
+{
+    return new NodoAlbero_t {
+        value,
+        primoFiglio, prossimoFratello, padre
+    };
+}
+
 void alberi::stampa_preorder(Albero_t albero)
 {
     if (albero == NULL)

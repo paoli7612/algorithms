@@ -17,6 +17,8 @@ typedef NodoAlbero_t *Albero_t;
 
 namespace alberi
 {
+    Albero_t nuovo_nodo(int value, NodoAlbero_t *primoFiglio, NodoAlbero_t *prossimoFratello, NodoAlbero_t *padre);
+
     void stampa_preorder(Albero_t albero);
     void stampa_postorder(Albero_t albero);
 
