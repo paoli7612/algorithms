@@ -8,7 +8,10 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
+    Albero_t albero = new NodoAlbero_t
+        {1, NULL, NULL, NULL};
 
+    alberi::stampa_preorder(albero);
 
     return 0;
 }
