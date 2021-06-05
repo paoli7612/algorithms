@@ -1,11 +1,37 @@
 #include "../include/alberi.h"
 
-Albero_t alberi::nuovo_nodo(int value, NodoAlbero_t *primoFiglio=NULL, NodoAlbero_t *prossimoFratello=NULL, NodoAlbero_t *padre=NULL)
+Albero_t alberi::nuovo_nodo(int value, NodoAlbero_t *primoFiglio, NodoAlbero_t *prossimoFratello, NodoAlbero_t *padre)
 {
     return new NodoAlbero_t {
         value,
         primoFiglio, prossimoFratello, padre
     };
+}
+
+void alberi::aggiungi_fratello(Albero_t albero, NodoAlbero_t *nodo)
+{
+    for (; albero->prossimoFratello!=NULL; albero=albero->prossimoFratello);
+    albero->prossimoFratello = nodo;
+}
+
+void alberi::aggiungi_fratello(Albero_t albero, int value)
+{
+    aggiungi_fratello(albero, nuovo_nodo(value));
+}
+
+void alberi::aggiungi_figlio(Albero_t albero, NodoAlbero_t *nodo)
+{
+    if (albero->primoFiglio == NULL)
+    {
+        albero->primoFiglio = nodo;
+        return;
+    }
+    aggiungi_fratello(albero->primoFiglio, nodo);
+}
+
+void alberi::aggiungi_figlio(Albero_t albero, int value)
+{
+    aggiungi_figlio(albero, nuovo_nodo(value));
 }
 
 void alberi::stampa_preorder(Albero_t albero)
