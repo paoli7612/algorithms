@@ -14,14 +14,17 @@ using namespace std;
 
 int foo(int *A, int len)
 {
+    if ((A[len-1] - A[0]) == len-1)
+        return -1;
 
+    return len;
 }
 
 int main(int argc, char **argv)
 {
 
-    int A[] = {1, 2, 3, 5, 6};
-    int len = 5;
+    int A[] = {2, 3, 4};
+    int len = 3;
 
     cout << foo(A, len); 
 
