@@ -5,10 +5,6 @@
 ```*OUTPUT*```: stampa di tutti gli ID dei nodi che sono antenati di p in T seguiti dal messaggio ”non ci sono altri antenati”, oppure il messaggio ”non ci sono antenati” nel casoin cui non ce ne siano.
 Fornire lo pseudo-codice di algoritmo che sfrutta la ricorsione per risolvere il problema. Studiare il costo computazionale dell’algoritmo proposto. Fornire un esempio con un albero T di altezza almeno due mostrando l’ordine delle chiamate ricorsive e il ritorno dalle chiamata.
 
-```*[-]*``` Si consideri il seguente problema:
-```*INPUT*```: un array A di n caratteri, una costante intera dispari k ∈ O(1) tale che k ≤ n.
-```*OUTPUT*```: VERO se esiste una sequenza di caratteri palindroma in A, di lunghezza con almeno k caratteri (si ricorda che una sequenza è palindroma se si pu`o leggere indifferentemente da sinistra a desta o da destra a sinistra), FALSO altrimenti.
-Spiegare brevemente a parole il funzionamento dell’algoritmo e fornire lo presudo-codice. Studiare il costo computazionale dell’algoritmo proposto.
 
 ```*[-]*``` Si consideri il seguente problema:
 ```*INPUT*```: A un array di n valori reali e x un valore reale.
