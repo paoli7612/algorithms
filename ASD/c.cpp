@@ -12,8 +12,18 @@
 
 using namespace std;
 
+int foo(int *A, int len)
+{
+
+}
+
 int main(int argc, char **argv)
 {
+
+    int A[] = {1, 2, 3, 5, 6};
+    int len = 5;
+
+    cout << foo(A, len); 
 
     return 0;
 }
