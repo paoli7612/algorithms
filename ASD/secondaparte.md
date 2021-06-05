@@ -16,7 +16,7 @@ Scrivere un algoritmo per il problema di costo O(n log n). Spiegare il suo funzi
 ```*OUTPUT*```: stampare tutti gli identificativi dei nodi a distanza esattamente k da v.
 Rappresentazione del grafo a scelta. Costo computazionale.
 
-```*[-]*``` Dato un array A di n naturali, tale che A[0] < ... < A[n − 1], l’indice i ∈ {1, ..., n − 1} è detto un salto, se vale che A[i − 1] + 1 < A[i]. Mostrare due esempi di array A con n ≥ 5 tali che: in un esempio non ci sia un salto, in un esempio ci sia. Scrivere un algoritmo (dando una breve descrizione a parole e lo pseudocodice) di costo computazionale O(log n) che restituisca -1 se l’array A non ha un salto, l’indice di un salto altrimenti.
+
 
 ```*[-]*``` Si consideri il seguente problema:
 ```*INPUT*```: un DAG G = (V, E) con V = {1, . . . , n} memorizzato tramite liste di adiacenza
