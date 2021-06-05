@@ -9,22 +9,6 @@ using namespace std;
 int main(int argc, char **argv)
 {
 
-    Lista_t lista = NULL;
-    for (int i=0; i<10; i++)
-        liste::aggiungi_testa(lista, i);
-    
-
-    for (int i=0; i<5; i++)
-    {
-        liste::rimuovi_nodo(lista->next, lista);
-        liste::stampa(lista);
-    }
-
-
-
-
-
-    
 
     return 0;
 }
