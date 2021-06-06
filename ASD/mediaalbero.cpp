@@ -1,3 +1,14 @@
+/*Si consideri il seguente problema:
+INPUT: un albero binario T realizzato con nodi e puntatori. I campi di ogni nodo dell’albero sono: lef t puntatore al
+figlio sinistro, right puntatore al figlio destro, key che memorizza un numero naturale.
+OUTPUT: per ogni nodo u dell’albero, stampare la media dei valori contenuti nei nodi del sottoalbero radicato in u
+(radice compresa)
+Fornire un esempio di input e output del problema con un albero T di altezza almeno tre.
+Fornire lo pseudo-codice di un algoritmo che utilizzi la ricorsione ma che NON usi variabili globali all’interno delle
+chiamate ricorsive.
+Studiare il costo computazionale dell’algoritmo proposto.
+*/
+
 #include <iostream>
 
 using namespace std;
