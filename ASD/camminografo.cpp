@@ -69,30 +69,13 @@ bool fulltrue(bool *a, const int len)
     return true;
 }
 
-void DFS(graph_t graph)
+void DFS(const graph_t graph, int vertex, bool *done)
 {
-    bool *done = new bool[graph.v];
-    for (int i=0; i<graph.v; i++)
-        done[i] = false;
-    
-    int ap = 0;
-    int i=4;
-    while (!fulltrue(done, graph.v) && i--)
-    {
-        done[ap] = true;
-        cout << ap;
-        for (nodeList_t *n=graph.adj[ap]; n!=NULL; n=n->next)
-        {
-            cout << n->vertex << endl;
-            if (! done[n->vertex])
-            {
-                ap = n->vertex;
-                break;
-            }
-        }
-        cout << ap << endl;
-
-    }
+    cout << "\t" << vertex << endl;
+    done[vertex] = true;
+    for (nodeList_t *ap=graph.adj[vertex]; ap!=NULL; ap=ap->next)
+        if (! done[ap->vertex])
+            DFS(graph, ap->vertex, done);
 }
 
 int main(int argc, char **argv)
@@ -103,9 +86,15 @@ int main(int argc, char **argv)
     connect(g, 3, 4);
     connect(g, 4, 2);
     connect(g, 0, 1);
+    connect(g, 4, 0);
 
     for (int i=0; i<5; i++)
         print(g.adj[i]);
+
+    bool *done = new bool[g.v];
+    for (int i=0; i<g.v; i++)
+        done[i] = false;
+    DFS(g, 3, done);
 
     return 0;
 }
