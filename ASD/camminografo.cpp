@@ -31,6 +31,17 @@ void add(adjList_t &list, nodeList_t *node)
     }
 }
 
+void print(adjList_t list)
+{
+    if (list == NULL)
+    {
+        cout << endl;
+        return;
+    }
+    cout << list->vertex << " ";
+    print(list->next);
+}
+
 struct graph_t {
     int v; // n vertex
     adjList_t *adj;
@@ -93,7 +104,8 @@ int main(int argc, char **argv)
     connect(g, 4, 2);
     connect(g, 0, 1);
 
-    DFS(g);
+    for (int i=0; i<5; i++)
+        print(g.adj[i]);
 
     return 0;
 }
