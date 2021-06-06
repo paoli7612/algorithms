@@ -42,11 +42,20 @@ graph_t new_graph (const int n) {
     g.adj = new adjList_t[n];
     for (int i=0; i<n; i++)
         g.adj[i] = NULL;
+    return g;
 }
 
 void connect(graph_t &graph, int a, int b)
 {
     add(graph.adj[a], new nodeList_t{b, NULL});
+}
+
+bool fulltrue(bool *a, const int len)
+{
+    for (int i=0; i<len; i++)
+        if (! a[i])
+            return false;
+    return true;
 }
 
 void DFS(graph_t graph)
@@ -55,7 +64,24 @@ void DFS(graph_t graph)
     for (int i=0; i<graph.v; i++)
         done[i] = false;
     
-    
+    int ap = 0;
+    int i=4;
+    while (!fulltrue(done, graph.v) && i--)
+    {
+        done[ap] = true;
+        cout << ap;
+        for (nodeList_t *n=graph.adj[ap]; n!=NULL; n=n->next)
+        {
+            cout << n->vertex << endl;
+            if (! done[n->vertex])
+            {
+                ap = n->vertex;
+                break;
+            }
+        }
+        cout << ap << endl;
+
+    }
 }
 
 int main(int argc, char **argv)
@@ -68,7 +94,6 @@ int main(int argc, char **argv)
     connect(g, 0, 1);
 
     DFS(g);
-
 
     return 0;
 }
