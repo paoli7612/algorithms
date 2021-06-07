@@ -16,9 +16,7 @@ struct nodeList_t {
     int vertex;
     nodeList_t *next;
 };
-
 typedef nodeList_t *adjList_t;
-
 void add(adjList_t &list, nodeList_t *node)
 {
     if (list == NULL)
@@ -30,7 +28,6 @@ void add(adjList_t &list, nodeList_t *node)
         ap->next = node;
     }
 }
-
 void print(adjList_t list)
 {
     if (list == NULL)
@@ -41,12 +38,10 @@ void print(adjList_t list)
     cout << list->vertex << " ";
     print(list->next);
 }
-
 struct graph_t {
     int v; // n vertex
     adjList_t *adj;
 };
-
 graph_t new_graph (const int n) {
     graph_t g;
     g.v = n;
@@ -55,12 +50,10 @@ graph_t new_graph (const int n) {
         g.adj[i] = NULL;
     return g;
 }
-
 void connect(graph_t &graph, int a, int b)
 {
     add(graph.adj[a], new nodeList_t{b, NULL});
 }
-
 bool fulltrue(bool *a, const int len)
 {
     for (int i=0; i<len; i++)
@@ -68,7 +61,6 @@ bool fulltrue(bool *a, const int len)
             return false;
     return true;
 }
-
 void DFS(const graph_t graph, int vertex, bool *done)
 {
     cout << "\t" << vertex << endl;
@@ -76,6 +68,11 @@ void DFS(const graph_t graph, int vertex, bool *done)
     for (nodeList_t *ap=graph.adj[vertex]; ap!=NULL; ap=ap->next)
         if (! done[ap->vertex])
             DFS(graph, ap->vertex, done);
+}
+
+int foo(graph_t g, int start, int end, int avoid)
+{
+    
 }
 
 int main(int argc, char **argv)
