@@ -1,46 +1,58 @@
-// FIFO
 
-struct node_t {
-    int value;
-    node_t* next;
+struct elem_t {
+    int inf;
+    elem_t* pun ;
 };
 
-typedef node_t* coda_t;
+typedef elem_t* lista;
 
-void coda_aggiungi(coda_t &coda, int value)
+struct coda_t {
+    lista head;
+    elem_t* tail;
+};
+
+void init(coda_t &c)
 {
-    coda_t testa = new node_t;
-    testa->value = value;
-    testa->next = coda;
-    coda = testa;
+    c.head = NULL;
+    c.tail = NULL;
 }
 
-void coda_stampa(coda_t &coda)
+elem_t *nuovo_elemento(int i)
 {
-    if (coda == NULL)
+    return new elem_t {i, NULL}; 
+}
+
+void enqueue(coda_t &c, int i)
+{
+    if (c.head == NULL)
     {
-        cout << endl;
+        c.head = nuovo_elemento(i);
+        c.tail = c.head;
         return;
     }
-
-    cout << coda->value << " ";
-    coda_stampa(coda->next);
-}
-
-int coda_togli(coda_t &coda)
-{
-    coda_t nuova_coda = coda->next;
-    int value = coda->value;
-    delete coda;
-    coda = nuova_coda;
-    return value;
-}
-
-int coda_lunghezza(coda_t &coda, int lunghezza=0)
-{
-    if (coda == NULL)
-        return lunghezza;
     else
-        return coda_lunghezza(coda->next, lunghezza+1);
+    {
+        c.tail->pun = nuovo_elemento(i);
+        c.tail = c.tail->pun;
+    }
 }
 
+int dequeue(coda_t &c)
+{
+    elem_t *ap = c.head;
+    int r = ap->inf;
+    c.head = c.head->pun;
+    delete ap;
+    return r;    
+}
+
+void stampa(const coda_t &c)
+{
+    elem_t *ap = c.head;
+    while (ap != NULL)
+    {
+        cout << ap->inf << " ";
+        ap = ap->pun;
+    }
+    cout << endl;
+}
