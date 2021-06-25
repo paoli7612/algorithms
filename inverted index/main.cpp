@@ -33,14 +33,29 @@ void list_add(List &list, const char filename[20])
     list_add(list, node);
 }
 
+struct Word {
+    char caratteri[80];
+    int numero_documenti;
+    List documenti;
+};
+
+struct Inverted {
+    List posting_list;
+
+};
+
+void inverted_init(Inverted inverted)
+{
+    inverted.posting_list = NULL;
+    list_add(inverted.posting_list, "primo");
+    list_add(inverted.posting_list, "secondo");
+    list_add(inverted.posting_list, "terzo");
+}
+
 int main(int argc, char **argv)
 {
-    List posting_list = NULL;
 
-    list_add(posting_list, "primo");
-    list_add(posting_list, "secondo");
-    list_add(posting_list, "terzo");
-    list_print(posting_list);
+    
 
     return 0;
 }
