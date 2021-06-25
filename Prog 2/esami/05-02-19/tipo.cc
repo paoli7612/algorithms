@@ -37,3 +37,14 @@ void print(card_t a)
 {
     std::cout << " < " << a.valore << " " << a.seme << " >";
 }
+
+bool next(card_t a, card_t b)
+{
+    if (a.seme != b.seme)
+        return false;
+
+    if (abs(a.valore - b.valore) == 1)
+        return true;
+    else
+        return false;    
+}
