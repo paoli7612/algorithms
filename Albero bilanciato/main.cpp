@@ -5,10 +5,12 @@
 
 using namespace std;
 
+const int BRANCH = 2;
+
 // nodo albero con due figli
 struct node_t {
   int value;
-  node_t *next[2];
+  node_t *next[BRANCH];
 };
 typedef node_t *tree_t;
 
@@ -17,7 +19,7 @@ node_t *new_node(int value)
 {
   node_t *node = new node_t;
   node->value = value;
-  for (int i=0; i<2; i++)
+  for (int i=0; i<BRANCH; i++)
     node->next[i] = NULL;
   return node;
 }
@@ -28,7 +30,7 @@ void add_child(tree_t &tree, int level)
   if (level == 0)
   return;
   tree = new_node(rand()%100);
-  for (int i=0; i<2; i++)
+  for (int i=0; i<BRANCH; i++)
   {
     add_child(tree->next[i], level-1);
   }
@@ -50,7 +52,7 @@ void show(tree_t tree, int height, int spaces, int current=0)
       cout << "  ";
   }
   else if(height > current)
-    for (int i=0; i<2; i++)
+    for (int i=0; i<BRANCH; i++)
       show(tree->next[i], height, spaces, current+1);
 }
 
@@ -82,25 +84,11 @@ int main(int argc, char** argv)
   srand(time(NULL));
 
   int LIVELLI;
-  do {
-    cout << "Liveli: ";
-    cin >> LIVELLI;
-  } while(LIVELLI < 1 || LIVELLI > 25);
+  cout << "Liveli: ";
+  cin >> LIVELLI;
 
   tree_t tree = NULL;
   add_child(tree, LIVELLI);
   show_tree(tree, LIVELLI);
-
-  int N;
-  cout << "Inserisci il numero da cercare: ";
-  cin >> N;
-  if (search(tree, N))
-    cout << "Numero presente nell'albero" << endl;
-  else
-    cout << "Il numero non è presente" << endl;
-
-  char a;
-  cin >> a;
-
   return 0;
 }
