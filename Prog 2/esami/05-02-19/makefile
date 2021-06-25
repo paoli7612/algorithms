@@ -1,7 +1,7 @@
 run: liste.o tipo.o
 	g++ compito.cc liste.o tipo.o -o compito.out
+	rm *.o
 	./compito.out
-	rm *.o*
 
 liste.o: 
 	g++ liste.cc -c -o liste.o

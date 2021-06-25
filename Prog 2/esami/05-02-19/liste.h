@@ -22,3 +22,4 @@ card_t head(list_t);
 elem_t* ord_search(list_t, card_t);
 elem_t* new_elem(card_t);
 elem_t* search(list_t, card_t);
+
