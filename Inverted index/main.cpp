@@ -2,12 +2,14 @@
 #include <fstream>
 #include <cstring>
 
+#define LEN 50
+
 using namespace std;
 
 namespace list {
 
     struct Node {
-        char str[50];
+        char str[LEN];
         Node *next;
     };
 
@@ -29,12 +31,23 @@ namespace list {
         else
             add(list->next, node);
     }
-    void add(List &list, const char str[20])
+    void add(List &list, const char str[LEN])
     {
         Node *node = new Node;
         strcpy(node->str, str);
         node->next = NULL;
         add(list, node);
+    }
+
+    Node *search(List list, const char str[LEN])
+    {
+        if (list == NULL)
+            return NULL;
+
+        if (strcmp(list->str, str) == 0)
+            return list;
+        else
+            return search(list->next, str);
     }
 
 }
@@ -50,17 +63,29 @@ struct Inverted {
     list::List files;
 };
 
+int search(Words *words, const char str[LEN])
+{
+    while ()
+}
+
+void add_word(Word *words, char word[LEN])
+{
+    cout << "add: " << word;
+    int pos = search(words, word);
+
+}
+
 void inverted_load(Inverted &inverted, list::List file)
 {
     if (file == NULL)
         return;
 
-    char str[50];
+    char str[LEN];
     ifstream f(file->str);
     while (!f.eof()) 
     {
         f >> str;
-        cout << str << endl;
+        add_word(inverted.words, str);
     }
 
     inverted_load(inverted, file->next);
