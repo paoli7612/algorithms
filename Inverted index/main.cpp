@@ -12,6 +12,25 @@ namespace files {
     };
     typedef Node *List;
 
+    void add(List &list, Node *node)
+    {
+        if (list == NULL)
+            list = node;
+        else
+            add(list->next, node);
+    }
+
+    Node* search(List &list, Node *node)
+    {
+        if (list == NULL)
+            return NULL;
+
+        if (list == node)
+            return node;
+        else
+            return search(list->next, node);
+    }
+
     void print(Node *node)
     {
         if (node == NULL)
@@ -33,6 +52,7 @@ namespace words {
         Word word;
         int totale;
         Node *next;
+        files::List files;
     };
     typedef Node *List;
 
@@ -42,6 +62,28 @@ struct Inverted {
     files::List files;
     words::List words;
 };
+
+void add_word(words::List &words, words::Word word, files::Node *file)
+{
+    if (words == NULL) // nuova word
+    {
+        words::Node *node = new words::Node;
+        strcpy(node->word, word);
+        node->totale = 1;
+        node->files = file;
+        words = node;
+    }
+
+    if (strcmp(words->word, word) == 0)
+    {
+        words->totale++;
+        if (files::search(words->files, file) == NULL)
+            files::add(words->files, file);
+    }
+    
+    else
+        add_word(words->next, word, file);
+}
 
 void add_file(Inverted &inverted, const char filename[16])
 {
@@ -68,6 +110,7 @@ void add_file(Inverted &inverted, const char filename[16])
     {
         f >> word;
         cout << word << " ";
+        add_word(inverted.words, word, node);
     }
     cout << endl;
 }
