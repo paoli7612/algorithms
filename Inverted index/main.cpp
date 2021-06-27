@@ -3,58 +3,74 @@
 
 using namespace std;
 
-struct NodeList {
-    char filename[20];
-    NodeList *next;
-};
-typedef NodeList *List;
+namespace list {
 
-void list_print(List list) {
-    if (list == NULL) 
-        cout << endl;
-    else
-    {
-        cout << list->filename << ".txt ";
-        list_print(list->next);
+    struct Node {
+        char str[50];
+        Node *next;
+    };
+
+    typedef Node *List;
+
+    void print(List list) {
+        if (list == NULL) 
+            cout << endl;
+        else
+        {
+            cout << list->str << ".txt ";
+            print(list->next);
+        }
     }
-}
-void list_add(List &list, NodeList *node)
-{
-    if (list == NULL)
-        list = node;
-    else
-        list_add(list->next, node);
-}
-void list_add(List &list, const char filename[20])
-{
-    NodeList *node = new NodeList;
-    strcpy(node->filename, filename);
-    node->next = NULL;
-    list_add(list, node);
+    void add(List &list, Node *node)
+    {
+        if (list == NULL)
+            list = node;
+        else
+            add(list->next, node);
+    }
+    void add(List &list, const char str[20])
+    {
+        Node *node = new Node;
+        strcpy(node->str, str);
+        node->next = NULL;
+        add(list, node);
+    }
+
 }
 
 struct Word {
-    char caratteri[80];
+    char caratteri[32];
     int numero_documenti;
-    List documenti;
+    list::List documenti;
 };
 
 struct Inverted {
-    List posting_list;
-
+    Word *words;
+    list::List files;
 };
 
-void inverted_init(Inverted inverted)
+void inverted_init(Inverted &inverted)
 {
-    inverted.posting_list = NULL;
-    list_add(inverted.posting_list, "primo");
-    list_add(inverted.posting_list, "secondo");
-    list_add(inverted.posting_list, "terzo");
+    inverted.words = NULL;
+    inverted.files = NULL;
+    list::add(inverted.files, "primo");
+    list::add(inverted.files, "secondo");
+    list::add(inverted.files, "terzo");
+}
+
+void inverted_load(Inverted &inverted, list::List files)
+{
+    if (files == NULL)
+        return;
+
+    inverted_load(inverted, files->next);
 }
 
 int main(int argc, char **argv)
 {
-
+    Inverted inverted;
+    inverted_init(inverted);
+    print(inverted.files);
     
 
     return 0;
