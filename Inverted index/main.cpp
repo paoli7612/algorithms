@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <cstring>
 
 using namespace std;
@@ -49,22 +50,33 @@ struct Inverted {
     list::List files;
 };
 
+void inverted_load(Inverted &inverted, list::List file)
+{
+    if (file == NULL)
+        return;
+
+    char str[50];
+    ifstream f(file->str);
+    while (!f.eof()) 
+    {
+        f >> str;
+        cout << str << endl;
+    }
+
+    inverted_load(inverted, file->next);
+}
+
 void inverted_init(Inverted &inverted)
 {
     inverted.words = NULL;
     inverted.files = NULL;
-    list::add(inverted.files, "primo");
-    list::add(inverted.files, "secondo");
-    list::add(inverted.files, "terzo");
+    list::add(inverted.files, "a.txt");
+    list::add(inverted.files, "b.txt");
+    list::add(inverted.files, "c.txt");
+    inverted_load(inverted, inverted.files);
 }
 
-void inverted_load(Inverted &inverted, list::List files)
-{
-    if (files == NULL)
-        return;
 
-    inverted_load(inverted, files->next);
-}
 
 int main(int argc, char **argv)
 {
