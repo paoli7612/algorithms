@@ -56,12 +56,30 @@ namespace words {
     };
     typedef Node *List;
 
+    void print(List &list)
+    {
+        if (list == NULL)
+            return;
+
+        cout << list->word << "\t" << list->totale << "\t" << list->files->filename << endl;
+        print(list->next);
+    }
+
 }
 
 struct Inverted {
     files::List files;
     words::List words;
 };
+
+void print(Inverted &inverted)
+{   
+    cout << "Files: " << endl;
+    files::print(inverted.files);
+
+    cout << endl << "Words: " << endl;
+    words::print(inverted.words);
+}
 
 void add_word(words::List &words, words::Word word, files::Node *file)
 {
@@ -109,10 +127,8 @@ void add_file(Inverted &inverted, const char filename[16])
     while (!f.eof())
     {
         f >> word;
-        cout << word << " ";
         add_word(inverted.words, word, node);
     }
-    cout << endl;
 }
 
 void init(Inverted &inverted)
@@ -124,7 +140,7 @@ void init(Inverted &inverted)
     add_file(inverted, "b.txt");
     add_file(inverted, "c.txt");
 
-    files::print(inverted.files);
+    print(inverted);
 }
 
 int main(int argc, char const *argv[])
