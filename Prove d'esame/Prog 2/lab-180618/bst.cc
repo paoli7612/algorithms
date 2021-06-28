@@ -9,7 +9,6 @@ using namespace std;
 
 #include <cstring>
 
-#include "tipo.h"
 #include "bst.h"
 
 static tipo_key copy_key(tipo_key& s,tipo_key s1){
@@ -78,6 +77,11 @@ void bst_insert(bst& b, bnode* n){
 	    }
 }}
 
+void bst_insert(bst& b, tipo_key k, tipo_inf i)
+{
+	bst_insert(b, bst_newNode(k, i));
+}
+
 bnode* bst_search(bst b,tipo_key k){
 
 	    while (b != NULL) {
@@ -144,3 +148,16 @@ void bst_delete(bst& b, bnode* n){
 	  delete n;
 
 }
+
+void print_inorder(bst albero)
+{
+	if (albero == NULL)
+		return;
+
+	print_inorder(albero->left);
+	cout << "codice: " << albero->key << "\t ";
+	print(albero->inf);
+	cout << endl;
+	print_inorder(albero->right);
+}
+

@@ -2,11 +2,16 @@
 /* HEADER MODULO "carta" 	   */
 /*******************************/
 
+#include <iostream>
+#include <cstring>
 
+struct carta_t {
+    char nome[40];
+    int punti;
+};
 
+typedef int codice_t;
 
-
-
-int compare(tipo_inf,tipo_inf);
-void copy(tipo_inf&,tipo_inf);
-void print(tipo_inf);
+int compare(carta_t,carta_t);
+void copy(carta_t&,carta_t);
+void print(carta_t);
