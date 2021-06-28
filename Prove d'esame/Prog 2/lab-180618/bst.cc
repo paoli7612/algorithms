@@ -153,7 +153,6 @@ void print_inorder(bst albero)
 {
 	if (albero == NULL)
 		return;
-
 	print_inorder(albero->left);
 	cout << "codice: " << albero->key << "\t ";
 	print(albero->inf);
