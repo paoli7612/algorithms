@@ -5,7 +5,7 @@
 
 using namespace std;
 
-
+// punto 2
 int totalePunti(bst albero, codice_t min, codice_t max)
 {
     if (albero == NULL)
@@ -72,6 +72,19 @@ void chiedi_acquisto(bst &albero, istream &is)
     cout << endl;
 }
 
+// punto 3
+void chiedi_acquisti(bst albero, istream &is)
+{
+    int m;
+    cout << "numero acquisti: ";
+    is >> m;
+
+    for (int i=0; i<m; i++)
+    {
+        chiedi_acquisto(albero, is);
+    }
+}
+
 int main(int argc, char **argv)
 {
     bst albero;
@@ -98,13 +111,7 @@ int main(int argc, char **argv)
 
     cout << "totale punti: " << totalePunti(albero, min, max);
 
-    int m;
-    cout << "numero acquisti: ";
-    file >> m;
-
-    for (int i=0; i<m; i++)
-        chiedi_acquisto(albero, file);
-    
+    chiedi_acquisti(albero, file);
     
     print_inorder(albero);
 
