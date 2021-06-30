@@ -13,7 +13,7 @@ void leggi_riga(istream &is, char buffer[80], int maxlen=80)
 
 void stampa_riga(char *buffer, int maxlen=80)
 {
-    for (int i=0; i<maxlen && buffer[i]!='\n'; i++)
+    for (int i=0; i<maxlen && buffer[i-1]!='\n'; i++)
         cout << *(&buffer[i]);
 }
 
