@@ -76,7 +76,6 @@ card_t *scala(list_t list, int &lunghezza)
 
 int main(int argc, char **argv)
 {
-
     srand(time(NULL));
 
     const int nGiocatori = 1;
