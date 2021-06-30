@@ -7,7 +7,8 @@ using namespace std;
 void leggi_riga(istream &is, char buffer[80], int maxlen=80)
 {
     int i = 0;
-    do is.read(&buffer[i], 1);
+    do {is.read(&buffer[i], 1);
+    if (is.eof()) break; }
     while (buffer[i++] != '\n' && i<maxlen);
 }
 
@@ -25,7 +26,7 @@ int main(int argc, char const *argv[])
 
     while (!file.eof())
     {
-        cout << "nuova riga" << endl;
+        cout << "\t\t >!<" << endl;
         leggi_riga(file, buffer);
         stampa_riga(buffer);
     }
