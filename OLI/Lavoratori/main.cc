@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 struct mat_t {
     int **valori;
@@ -12,11 +13,15 @@ void inizializza(mat_t &mat, const int N) {
         mat.valori[i] = new int[N];
 }
 
-void chiedi(mat_t &mat) {
+void chiedi(mat_t &mat, bool random) {
     for (int y=0; y<mat.n; y++) {
         for (int x=0; x<mat.n; x++) {
-            std::cout << "lavoratore " << y << "\tcompito " << x << ": "; 
-            std::cin >> mat.valori[y][x];
+            if (random) {
+                mat.valori[y][x] = rand()%10;
+            } else {
+                std::cout << "lavoratore " << y << "\tcompito " << x << ": "; 
+                std::cin >> mat.valori[y][x];
+            }
         }
     }
 }
@@ -31,16 +36,29 @@ void stampa(const mat_t &mat) {
     }
 }
 
+int* soluzioni(const mat_t &mat) {
+    int N = tgamma(mat.n+1);
+    int *sol = new int[N];
+    std::cout << N << std::endl;
+    return sol;
+}
+
 int main(int argc, char const *argv[])
 {
     mat_t mat;
     int N;
-    std::cout << "numero lavoratori: ";
-    std::cin >> N;
-    inizializza(mat, N);
-
-    chiedi(mat);
+    if (argc == 2) {
+        N = std::atoi(argv[1]);
+        inizializza(mat, N);
+        chiedi(mat, true); 
+    } else {
+        std::cout << "numero lavoratori: ";
+        std::cin >> N;
+        inizializza(mat, N);
+        chiedi(mat, false); 
+    }
     stampa(mat);
+    soluzioni(mat);
 
     return 0;
 }
